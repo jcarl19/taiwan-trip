@@ -1,0 +1,25 @@
+# Publish app source and runtime assets; retain local import/research helpers locally.
+*
+!/.gitignore
+!/.nojekyll
+!/index.html
+!/app.js
+!/styles.css
+!/sw.js
+!/manifest.webmanifest
+!/package.json
+!/README.md
+!/server.cjs
+!/data/
+/data/*
+!/data/itinerary.json
+!/data/photos.json
+!/assets/
+/assets/*
+!/assets/*.jpg
+!/assets/*.png
+!/assets/*.svg
+/assets/*review*.jpg
+!/scripts/
+/scripts/*
+!/scripts/check-prototype.cjs

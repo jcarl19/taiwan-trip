@@ -1,0 +1,2570 @@
+{
+  "rate": 1.968,
+  "days": [
+    {
+      "date": "2026-11-06",
+      "label": "Day 0",
+      "title": "The journey begins",
+      "subtitle": "Taytay → NAIA Terminal 3 → Taiwan",
+      "activities": [
+        {
+          "id": "06-01",
+          "time": "12:00 PM",
+          "title": "Final packing check",
+          "location": "Check luggage weight, travel essentials, gadgets, and clothing.",
+          "cost": null,
+          "maps": null,
+          "steps": [
+            "Weigh hand-carry baggage against the 10 kg allowance per person, subject to your booking rules.",
+            "Keep passports, wallet, phone, and travel documents in an accessible bag.",
+            "Check powerbank, chargers, travel adapters, medications, and toiletries."
+          ],
+          "notes": [],
+          "guide": [],
+          "summary": true,
+          "category": "explore"
+        },
+        {
+          "id": "06-02",
+          "time": "3:00 PM",
+          "title": "Schedule Grab",
+          "location": "Arrange your ride from Taytay, Rizal to NAIA Terminal 3.",
+          "cost": null,
+          "maps": null,
+          "steps": [
+            "Set pickup location in Taytay.",
+            "Confirm airport destination is NAIA Terminal 3.",
+            "Allow extra time for Friday afternoon traffic."
+          ],
+          "notes": [],
+          "guide": [],
+          "summary": false,
+          "category": "explore"
+        },
+        {
+          "id": "06-03",
+          "time": "3:30 PM",
+          "title": "Online check-in",
+          "location": "Check in using the Cebu Pacific app or website.",
+          "cost": null,
+          "maps": null,
+          "steps": [
+            "Complete check-in if already available.",
+            "Save boarding passes or check-in confirmation.",
+            "Review assigned seats, baggage allowance, and flight status."
+          ],
+          "notes": [],
+          "guide": [],
+          "summary": false,
+          "category": "explore"
+        },
+        {
+          "id": "06-04",
+          "time": "4:00 PM",
+          "title": "Wrap up work and prepare",
+          "location": "Finish work, shower, change clothes, and get ready.",
+          "cost": null,
+          "maps": null,
+          "steps": [
+            "Complete final work tasks.",
+            "Change into comfortable airport clothing.",
+            "Charge phones and prepare travel essentials."
+          ],
+          "notes": [],
+          "guide": [],
+          "summary": false,
+          "category": "explore"
+        },
+        {
+          "id": "06-05",
+          "time": "4:30 PM",
+          "title": "Final document check",
+          "location": "Verify all travel documents before leaving home.",
+          "cost": null,
+          "maps": null,
+          "steps": [
+            "Passports and Taiwan entry requirements.",
+            "Roundtrip flight tickets and hotel booking confirmation.",
+            "Taiwan Arrival Card submission confirmation, if applicable.",
+            "Cash, payment cards, and insurance documents."
+          ],
+          "notes": [],
+          "guide": [],
+          "summary": false,
+          "category": "explore"
+        },
+        {
+          "id": "06-06",
+          "time": "5:00 PM",
+          "title": "Leave Taytay, Rizal",
+          "location": "Depart via Grab to NAIA Terminal 3.",
+          "cost": null,
+          "maps": null,
+          "steps": [
+            "Check Grab driver and vehicle details.",
+            "Monitor traffic and estimated arrival.",
+            "Keep passports and phones in your personal bag."
+          ],
+          "notes": [],
+          "guide": [],
+          "summary": true,
+          "category": "transport"
+        },
+        {
+          "id": "06-07",
+          "time": "6:30–7:00 PM",
+          "title": "Arrive at NAIA Terminal 3",
+          "location": "Proceed to international departures.",
+          "cost": null,
+          "maps": null,
+          "steps": [
+            "Enter the terminal and locate Cebu Pacific's check-in area.",
+            "Check flight information screens.",
+            "Prepare passports and boarding passes."
+          ],
+          "notes": [],
+          "guide": [],
+          "summary": true,
+          "category": "explore"
+        },
+        {
+          "id": "06-08",
+          "time": "7:00 PM",
+          "title": "Security / terminal entry",
+          "location": "Complete entrance screening and head to the airline counters.",
+          "cost": null,
+          "maps": null,
+          "steps": [
+            "Present documents if requested.",
+            "Pass baggage through security screening.",
+            "Find your airline check-in or document-verification counter."
+          ],
+          "notes": [],
+          "guide": [],
+          "summary": false,
+          "category": "explore"
+        },
+        {
+          "id": "06-09",
+          "time": "7:15 PM",
+          "title": "Kiosk / check-in counter",
+          "location": "Complete airline document verification and any required counter procedures.",
+          "cost": null,
+          "maps": null,
+          "steps": [
+            "Confirm your flight and baggage status.",
+            "Obtain or verify boarding passes.",
+            "Ask staff if any additional travel documents are needed."
+          ],
+          "notes": [],
+          "guide": [],
+          "summary": false,
+          "category": "explore"
+        },
+        {
+          "id": "06-10",
+          "time": "7:30–8:30 PM",
+          "title": "Dinner",
+          "location": "Eat at NAIA Terminal 3 before immigration, if timing permits.",
+          "cost": null,
+          "maps": null,
+          "steps": [
+            "Choose a convenient restaurant in the terminal.",
+            "Avoid spending too long dining if counter queues are heavy.",
+            "Keep enough time for immigration and boarding."
+          ],
+          "notes": [],
+          "guide": [],
+          "summary": true,
+          "category": "food"
+        },
+        {
+          "id": "06-11",
+          "time": "After dinner",
+          "title": "Immigration and final security",
+          "location": "Complete departure formalities and locate your boarding gate.",
+          "cost": null,
+          "maps": null,
+          "steps": [
+            "Prepare passport and boarding pass.",
+            "Answer immigration questions accurately.",
+            "Proceed through final security if required.",
+            "Check gate number and boarding announcements."
+          ],
+          "notes": [],
+          "guide": [],
+          "summary": false,
+          "category": "explore"
+        },
+        {
+          "id": "06-12",
+          "time": "11:00 PM departure",
+          "title": "Board Cebu Pacific flight",
+          "location": "Board your flight to Taiwan.",
+          "cost": null,
+          "maps": null,
+          "steps": [
+            "Be at the assigned gate before boarding starts.",
+            "Keep boarding pass and passport ready.",
+            "Store cabin baggage as directed."
+          ],
+          "notes": [],
+          "guide": [],
+          "summary": true,
+          "category": "transport"
+        },
+        {
+          "id": "06-13",
+          "time": "November 7, approx. 2:00 AM",
+          "title": "Arrive at Taoyuan Airport",
+          "location": "Arrival at Taiwan Taoyuan International Airport Terminal 1.",
+          "cost": null,
+          "maps": null,
+          "steps": [
+            "Follow signs to arrival immigration.",
+            "Continue with the November 7 itinerary.",
+            "Taiwan has the same time zone as the Philippines."
+          ],
+          "notes": [],
+          "guide": [],
+          "summary": false,
+          "category": "explore"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-07",
+      "label": "Day 1",
+      "title": "A first taste of Taipei",
+      "subtitle": "Taoyuan → Longshan → Liberty Square → Ximending",
+      "activities": [
+        {
+          "id": "07-01",
+          "time": "2:00 AM",
+          "title": "Arrival at Taoyuan Airport",
+          "location": "Taoyuan International Airport Terminal 1",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&destination=Taoyuan%20International%20Airport%20Terminal%201&travelmode=walking",
+          "steps": [
+            "Disembark from Cebu Pacific flight 5J 310.",
+            "Follow the Arrivals / Immigration signs.",
+            "Prepare passports, Taiwan Arrival Card (TWAC) confirmations, hotel booking and return-flight details.",
+            "Keep carry-on bags and valuables with you."
+          ],
+          "notes": [
+            {
+              "label": "Reminders",
+              "text": "Taiwan and the Philippines share the same time zone."
+            },
+            {
+              "label": "If delayed / contingency",
+              "text": "If flight arrival is late, shift immigration and airport bus timing."
+            }
+          ],
+          "guide": [],
+          "summary": true,
+          "category": "explore"
+        },
+        {
+          "id": "07-02",
+          "time": "2:15–2:45 AM",
+          "title": "Immigration & Customs",
+          "location": "Airport foreign visitor clearance",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": null,
+          "steps": [
+            "Follow foreign passport / visitor immigration signage and airport staff instructions.",
+            "Present passport and any requested supporting documents.",
+            "If asked, state tourism from November 7 to November 11, 2026, and accommodation at Airline Inn Taipei Ximen.",
+            "Proceed through customs; use the green channel only if nothing needs declaring."
+          ],
+          "notes": [
+            {
+              "label": "Reminders",
+              "text": "Estimated clearance: 20–60+ minutes."
+            },
+            {
+              "label": "If delayed / contingency",
+              "text": "Take a later bus if immigration or customs takes longer."
+            }
+          ],
+          "guide": [],
+          "summary": false,
+          "category": "explore"
+        },
+        {
+          "id": "07-03",
+          "time": "2:45–3:00 AM",
+          "title": "Purchase EasyCards",
+          "location": "Airport convenience store / authorized counter",
+          "cost": [
+            800,
+            1200
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&destination=Taoyuan%20International%20Airport%20Terminal%201&travelmode=walking",
+          "steps": [
+            "Find an open convenience store or authorized transport counter selling EasyCards.",
+            "Buy one EasyCard per traveler. Card cost allowance: NT$100 each.",
+            "Add NT$300–500 initial stored value to each card.",
+            "Keep cards accessible for public transport."
+          ],
+          "notes": [
+            {
+              "label": "Reminders",
+              "text": "Two cards plus initial load: NT$800–1,200. Shop availability this early is unconfirmed."
+            },
+            {
+              "label": "If delayed / contingency",
+              "text": "If unavailable, purchase cards at the next convenient open transit or retail location."
+            }
+          ],
+          "guide": [],
+          "summary": false,
+          "category": "explore"
+        },
+        {
+          "id": "07-04",
+          "time": "3:00 AM",
+          "title": "Activate Taiwan eSIM",
+          "location": "Taoyuan Airport",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": null,
+          "steps": [
+            "Open iPhone Settings → Cellular / Mobile Data.",
+            "Enable the preinstalled Taiwan eSIM.",
+            "Choose the Taiwan eSIM as the cellular data line.",
+            "Avoid unintended roaming on the Philippine SIM.",
+            "Test Google Maps and Uber."
+          ],
+          "notes": [
+            {
+              "label": "Reminders",
+              "text": "Already purchased; zero incremental Day 1 spending assumed."
+            },
+            {
+              "label": "If delayed / contingency",
+              "text": "Use airport Wi-Fi temporarily if eSIM activation fails."
+            }
+          ],
+          "guide": [],
+          "summary": false,
+          "category": "explore"
+        },
+        {
+          "id": "07-05",
+          "time": "≈3:30–4:30 AM",
+          "title": "Bus 1819 to Taipei",
+          "location": "Taoyuan Airport T1 → Taipei Bus Station",
+          "cost": [
+            270,
+            270
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&destination=Taoyuan%20Airport%20Terminal%201%20Bus%20Station&travelmode=transit",
+          "steps": [
+            "Follow signs for Bus to City / Bus Station.",
+            "Locate Kuo-Kuang Bus 1819 toward Taipei Bus Station (臺北轉運站).",
+            "Confirm the live timetable, boarding bay and accepted payment method.",
+            "Board the bus and allow approximately 50–70 minutes travel."
+          ],
+          "notes": [
+            {
+              "label": "Reminders",
+              "text": "Budget NT$135 each. Exact early-morning departure and bay are **not verified**."
+            },
+            {
+              "label": "If delayed / contingency",
+              "text": "Catch the next available scheduled Bus 1819 if late."
+            }
+          ],
+          "guide": [],
+          "summary": false,
+          "category": "transport"
+        },
+        {
+          "id": "07-06",
+          "time": "≈4:30 AM",
+          "title": "Taxi / Uber to Hotel",
+          "location": "Taipei Bus Station → Airline Inn Taipei Ximen",
+          "cost": [
+            150,
+            250
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&destination=Airline%20Inn%20Taipei%20Ximen&origin=Taipei%20Bus%20Station&travelmode=driving",
+          "steps": [
+            "Exit Taipei Bus Station and go to a licensed taxi queue or request Uber.",
+            "Set the destination to Airline Inn Taipei Ximen.",
+            "Show this address if needed: 台北市中正區中華路一段59號.",
+            "Check your belongings before leaving the vehicle."
+          ],
+          "notes": [
+            {
+              "label": "Reminders",
+              "text": "Travel time after pickup ~5–15 minutes. NT$150–250 for two (estimate)."
+            },
+            {
+              "label": "If delayed / contingency",
+              "text": "If a car is not readily available, wait in an authorized taxi queue."
+            }
+          ],
+          "guide": [],
+          "summary": false,
+          "category": "transport"
+        },
+        {
+          "id": "07-07",
+          "time": "5:00 AM",
+          "title": "Hotel Luggage Drop-off",
+          "location": "Airline Inn Taipei Ximen",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&destination=Airline%20Inn%20Taipei%20Ximen&travelmode=walking",
+          "steps": [
+            "Approach reception with hotel booking confirmation.",
+            "Ask whether both carry-on bags can be stored.",
+            "Keep passports, cash, phones, medicines and valuables.",
+            "Collect any luggage claim receipt."
+          ],
+          "notes": [
+            {
+              "label": "Reminders",
+              "text": "5 AM storage availability and complimentary status are **not confirmed**. Standard room check-in is 3:00 PM."
+            },
+            {
+              "label": "If delayed / contingency",
+              "text": "Ask reception about storage alternatives if luggage cannot be left."
+            }
+          ],
+          "guide": [],
+          "summary": false,
+          "category": "stay"
+        },
+        {
+          "id": "07-08",
+          "time": "5:20–6:45 AM",
+          "title": "Early Morning Break",
+          "location": "Hotel waiting area (subject to permission)",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": null,
+          "steps": [
+            "Ask permission to use the waiting area or restroom.",
+            "Rest following the overnight flight.",
+            "Hydrate and check essential belongings.",
+            "Review breakfast directions and leave around 6:45 AM."
+          ],
+          "notes": [
+            {
+              "label": "Reminders",
+              "text": "No extra sightseeing scheduled; optional refreshments not included in budget."
+            },
+            {
+              "label": "If delayed / contingency",
+              "text": "If waiting area is unavailable, ask staff where you can safely wait nearby."
+            }
+          ],
+          "guide": [],
+          "summary": false,
+          "category": "stay"
+        },
+        {
+          "id": "07-09",
+          "time": "7:00–8:00 AM",
+          "title": "Breakfast — Yong He Soy Milk",
+          "location": "Planned Hankou Street area, Ximending",
+          "cost": [
+            160,
+            240
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&destination=Yong%20He%20Soy%20Milk%20Hankou%20Street%20Taipei&origin=Airline%20Inn%20Taipei%20Ximen&travelmode=walking",
+          "steps": [
+            "Walk ~8–12 minutes from hotel to the planned restaurant.",
+            "Check dine-in and takeaway queues.",
+            "Follow current counter / tray ordering instructions.",
+            "Consider plain soy milk, mantou, plain shaobing or steamed options with lean fillings if available.",
+            "Order, pay and aim to finish by 8 AM."
+          ],
+          "notes": [
+            {
+              "label": "Reminders",
+              "text": "Queue estimate 10–25+ minutes. Exact branch, opening hours and prices require reconfirmation. Avoid fried youtiao and oily options if symptomatic."
+            },
+            {
+              "label": "If delayed / contingency",
+              "text": "Choose a simple nearby breakfast alternative if the venue is closed or the wait becomes impractical."
+            }
+          ],
+          "guide": [],
+          "summary": true,
+          "category": "food"
+        },
+        {
+          "id": "07-10",
+          "time": "8:40–9:00 AM",
+          "title": "MRT to Longshan Temple",
+          "location": "Ximen BL11 → Longshan Temple BL10",
+          "cost": [
+            40,
+            40
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&destination=Longshan%20Temple%20MRT%20Station&origin=Ximen%20MRT%20Station&travelmode=transit",
+          "steps": [
+            "Enter Ximen MRT Station (BL11).",
+            "Take Blue / Bannan Line toward Dingpu (頂埔).",
+            "Tap EasyCards at the entry gates.",
+            "Ride **one stop** to Longshan Temple (BL10).",
+            "Take **Exit 1** and walk toward the temple."
+          ],
+          "notes": [
+            {
+              "label": "Reminders",
+              "text": "Planning allowance NT$20 per person, NT$40 for two."
+            },
+            {
+              "label": "If delayed / contingency",
+              "text": "If delayed, shorten the temple visit to ~30 minutes."
+            }
+          ],
+          "guide": [],
+          "summary": false,
+          "category": "transport"
+        },
+        {
+          "id": "07-11",
+          "time": "9:00–10:00 AM",
+          "title": "Explore Longshan Temple",
+          "location": "Longshan Temple (龍山寺)",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&destination=Lungshan%20Temple%20Taipei&travelmode=walking",
+          "steps": [
+            "Enter the public visitor areas.",
+            "Explore the courtyard and traditional architecture.",
+            "Take respectful photos where permitted.",
+            "Avoid obstructing worshippers and ceremonies.",
+            "Leave around 10 AM."
+          ],
+          "notes": [
+            {
+              "label": "Reminders",
+              "text": "Admission free. Recommended visit 45–60 minutes."
+            },
+            {
+              "label": "If delayed / contingency",
+              "text": "Shorten to ~30 minutes if behind schedule."
+            }
+          ],
+          "guide": [],
+          "summary": true,
+          "category": "explore"
+        },
+        {
+          "id": "07-12",
+          "time": "10:00–10:45 AM",
+          "title": "MRT to Chiang Kai-shek Memorial Hall",
+          "location": "Longshan Temple BL10 → Ximen BL11 → CKS G10",
+          "cost": [
+            40,
+            50
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&destination=Chiang%20Kai-shek%20Memorial%20Hall%20MRT%20Station&origin=Longshan%20Temple%20MRT%20Station&travelmode=transit",
+          "steps": [
+            "From Longshan Temple BL10, board Blue Line toward Nangang Exhibition Center.",
+            "Ride one stop to Ximen BL11.",
+            "Transfer inside the station to Green Line G12.",
+            "Board toward Xindian / Taipower Building.",
+            "Ride **two stops** to Chiang Kai-shek Memorial Hall G10.",
+            "Take **Exit 5** and walk to the ceremony viewing area."
+          ],
+          "notes": [
+            {
+              "label": "Reminders",
+              "text": "Estimated NT$20–25 per person. Aim to arrive around 10:45–10:50 AM."
+            },
+            {
+              "label": "If delayed / contingency",
+              "text": "If late, prioritize memorial grounds and confirm whether ceremony is still feasible."
+            }
+          ],
+          "guide": [],
+          "summary": false,
+          "category": "transport"
+        },
+        {
+          "id": "07-13",
+          "time": "11:00–11:45 AM",
+          "title": "Chiang Kai-shek Memorial Hall",
+          "location": "Liberty Square + planned honor guard viewing",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&destination=Chiang%20Kai-shek%20Memorial%20Hall%20Taipei&travelmode=walking",
+          "steps": [
+            "Check whether the 11 AM honor guard ceremony is operating.",
+            "View from the designated area if available.",
+            "Explore Liberty Square and photograph the memorial.",
+            "Visit accessible public areas.",
+            "Finish around 11:45 AM."
+          ],
+          "notes": [
+            {
+              "label": "Reminders",
+              "text": "Admission free. Ceremony timing and location can change or be canceled."
+            },
+            {
+              "label": "If delayed / contingency",
+              "text": "If ceremony is unavailable, focus on architecture, Liberty Square and photos."
+            }
+          ],
+          "guide": [],
+          "summary": true,
+          "category": "explore"
+        },
+        {
+          "id": "07-14",
+          "time": "11:45 AM–1:00 PM",
+          "title": "Lunch — Taiwanese Cuisine",
+          "location": "Hang Zhou Xiao Long Bao (primary) / Chun Shui Tang (backup)",
+          "cost": [
+            400,
+            650
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&destination=Hang%20Zhou%20Xiao%20Long%20Bao%20Taipei&origin=Chiang%20Kai-shek%20Memorial%20Hall%20Taipei&travelmode=walking",
+          "steps": [],
+          "notes": [
+            {
+              "label": "Reminders",
+              "text": "Restaurant selection changes the budget; **do not count both lunch venues**."
+            },
+            {
+              "label": "If delayed / contingency",
+              "text": "If it is already ~1:30 PM after eating, head toward the hotel rather than extending sightseeing."
+            }
+          ],
+          "guide": [
+            "**Primary — Hang Zhou Xiao Long Bao (Hangzhou South Road Section 2)**",
+            "- Estimated 10–15 min walking from Chiang Kai-shek Memorial Hall complex; casual indoor / air-conditioned Taiwanese dumpling restaurant.",
+            "- **Budget for two:** NT$400–650 (₱787–₱1,279 approximately).",
+            "- **Estimated queue:** light 10–20 min; normal 30–45 min; busy Saturday lunch 45–75+ min.",
+            "- **Queue decision:** <15 min → stay; 15–30 min → stay if comfortable; >30 min → consider switching to Chun Shui Tang.",
+            "- **Ordering steps:**",
+            "1. Go to restaurant entrance.",
+            "2. Look for queue-number tablet and register 2 people if still in use.",
+            "3. Wait until number is called.",
+            "4. If staff instruct, scan table QR to order.",
+            "5. Select dishes and submit.",
+            "6. Check whether drinks / sides are self-service.",
+            "7. Pay at cashier as instructed; bring cash.",
+            "- **Historical menu price references (not verified as current):** soup dumplings NT$190 (₱374), hot-and-sour soup NT$80 (₱157), side dish NT$60 (₱118).",
+            "- **Lower-fat considerations:** check steamed vegetable or shrimp-based dumplings; ask about fillings and soup fat; do not assume pork soup dumplings are low-fat.",
+            "**Backup — Chun Shui Tang (CKS Memorial Hall branch)**",
+            "- **Location:** National Concert Hall, Gate 2. Indoor, air-conditioned Taiwanese tea-house style.",
+            "- **Published reference opening time:** 11:30 AM; verify current Saturday schedule.",
+            "- **Queue allowance:** 10–30+ minutes (can be longer).",
+            "- **Budget for two:** NT$500–800 (₱984–₱1,574 approximately).",
+            "- **Ordering steps:**",
+            "1. Find the National Concert Hall Gate 2 entrance.",
+            "2. Request table for two.",
+            "3. Take queue number if necessary.",
+            "4. Use QR menu or follow current staff ordering system.",
+            "5. Choose lighter available options such as soups, vegetables, noodles, unsweetened tea.",
+            "6. Confirm and pay following staff directions.",
+            "- **Lower-fat considerations:** look for chicken / mushroom soups, lower-oil noodles or vegetables; avoid heavily sauced or fried food if triggering symptoms."
+          ],
+          "summary": true,
+          "category": "food"
+        },
+        {
+          "id": "07-15",
+          "time": "1:00–2:45 PM",
+          "title": "Return to Ximending",
+          "location": "CKS Memorial Hall G10 → Ximen G12",
+          "cost": [
+            40,
+            60
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&destination=Ximen%20MRT%20Station&origin=Chiang%20Kai-shek%20Memorial%20Hall%20MRT%20Station&travelmode=transit",
+          "steps": [
+            "Open directions from whichever lunch restaurant you use.",
+            "If departing from CKS Memorial Hall G10, take Green Line toward Songshan.",
+            "Ride two stops to Ximen G12.",
+            "Use Exit 6 for the Ximending pedestrian district.",
+            "Browse casually while waiting for hotel check-in."
+          ],
+          "notes": [
+            {
+              "label": "Reminders",
+              "text": "Planning MRT allowance NT$40–60 for two."
+            },
+            {
+              "label": "If delayed / contingency",
+              "text": "Skip afternoon browsing if lunch takes longer."
+            }
+          ],
+          "guide": [],
+          "summary": false,
+          "category": "explore"
+        },
+        {
+          "id": "07-16",
+          "time": "3:00–3:30 PM",
+          "title": "Hotel Check-in",
+          "location": "Airline Inn Taipei Ximen",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&destination=Airline%20Inn%20Taipei%20Ximen&travelmode=walking",
+          "steps": [
+            "Return to the reception desk.",
+            "Present passports and your room booking.",
+            "Retrieve stored luggage if applicable.",
+            "Confirm key and access, and ask about any security deposit.",
+            "Check air conditioning, shower and door lock.",
+            "Ask for a quieter room if available."
+          ],
+          "notes": [
+            {
+              "label": "Reminders",
+              "text": "Hotel accommodation is excluded from the day activity budget."
+            },
+            {
+              "label": "If delayed / contingency",
+              "text": "If the room is not ready, ask reception for an updated ready time."
+            }
+          ],
+          "guide": [],
+          "summary": true,
+          "category": "stay"
+        },
+        {
+          "id": "07-17",
+          "time": "3:30–5:30 PM",
+          "title": "Shower, Sleep & Recharge",
+          "location": "Hotel rest",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": null,
+          "steps": [
+            "Shower and change clothes.",
+            "Charge phones and power banks.",
+            "Sleep or rest.",
+            "Set an alarm for 5:30 PM."
+          ],
+          "notes": [
+            {
+              "label": "Reminders",
+              "text": "Important recovery time after the overnight flight."
+            },
+            {
+              "label": "If delayed / contingency",
+              "text": "If exhausted, shorten the evening optional shopping stops."
+            }
+          ],
+          "guide": [],
+          "summary": true,
+          "category": "stay"
+        },
+        {
+          "id": "07-18",
+          "time": "6:00–6:20 PM",
+          "title": "Rainbow Six Crossing",
+          "location": "Near Ximen MRT Exit 6",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&destination=Rainbow%20Six%20Crossing%20Ximending%20Taipei&origin=Airline%20Inn%20Taipei%20Ximen&travelmode=walking",
+          "steps": [
+            "Walk from Airline Inn to Ximen Exit 6.",
+            "Find the rainbow pedestrian crossing.",
+            "Take photos safely and follow pedestrian signals.",
+            "Enjoy the neon-lit surroundings."
+          ],
+          "notes": [
+            {
+              "label": "Reminders",
+              "text": "Free; photography should not obstruct traffic."
+            },
+            {
+              "label": "If delayed / contingency",
+              "text": "Take fewer photos if running late."
+            }
+          ],
+          "guide": [],
+          "summary": true,
+          "category": "explore"
+        },
+        {
+          "id": "07-19",
+          "time": "6:20–6:55 PM",
+          "title": "The Red House Weekend Market",
+          "location": "Historic red-brick building + creative market",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&destination=The%20Red%20House%20Ximending%20Taipei&origin=Rainbow%20Six%20Crossing%20Ximending%20Taipei&travelmode=walking",
+          "steps": [
+            "Walk from Rainbow Six Crossing to The Red House.",
+            "Photograph the historic exterior.",
+            "Explore the outdoor creative market if operating.",
+            "Browse handmade accessories, gifts and souvenirs.",
+            "Leave around 6:55 PM."
+          ],
+          "notes": [
+            {
+              "label": "Reminders",
+              "text": "Browsing is free. Actual market schedule and weather may affect availability. Purchases excluded."
+            },
+            {
+              "label": "If delayed / contingency",
+              "text": "If market is closed, take exterior photographs and continue toward the food streets."
+            }
+          ],
+          "guide": [],
+          "summary": true,
+          "category": "explore"
+        },
+        {
+          "id": "07-20",
+          "time": "6:55–7:45 PM",
+          "title": "Ximending Street Food Crawl",
+          "location": "Hanzhong Street + Wuchang Street",
+          "cost": [
+            300,
+            600
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&destination=Ximending%20Pedestrian%20Area%20Taipei&travelmode=walking",
+          "steps": [
+            "Explore Hanzhong and Wuchang pedestrian streets.",
+            "Inspect stall menus and posted prices.",
+            "Join the queue and point to or order your chosen snack.",
+            "Request less oil, butter or sauce when feasible.",
+            "Pay, collect food and keep walkways clear.",
+            "Dispose of rubbish properly."
+          ],
+          "notes": [
+            {
+              "label": "Reminders",
+              "text": "This **replaces a mandatory heavy dinner**. Lower-fat candidates include roasted sweet potato, fruit, steamed buns, grilled corn and unsweetened tea; verify preparations."
+            },
+            {
+              "label": "If delayed / contingency",
+              "text": "If hungry, eat a sufficient lighter meal rather than forcing only snacks. If tired, return to hotel early."
+            }
+          ],
+          "guide": [],
+          "summary": true,
+          "category": "food"
+        },
+        {
+          "id": "07-21",
+          "time": "7:45–8:25 PM",
+          "title": "Eslite Spectrum Ximen",
+          "location": "Optional indoor shopping",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&destination=Eslite%20Spectrum%20Ximen%20Taipei&travelmode=walking",
+          "steps": [
+            "Walk to Eslite Spectrum Ximen.",
+            "Browse fashion, accessories and lifestyle goods.",
+            "Use this as an indoor stop if it is raining.",
+            "Leave around 8:25 PM if continuing to DON DON DONKI."
+          ],
+          "notes": [
+            {
+              "label": "Reminders",
+              "text": "Free entrance. Purchases excluded; confirm actual operating hours."
+            },
+            {
+              "label": "If delayed / contingency",
+              "text": "Skip if tired or running late."
+            }
+          ],
+          "guide": [],
+          "summary": true,
+          "category": "explore"
+        },
+        {
+          "id": "07-22",
+          "time": "8:25–8:50 PM",
+          "title": "DON DON DONKI Ximen",
+          "location": "Optional shopping + groceries",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&destination=DON%20DON%20DONKI%20Ximen%20Taipei&travelmode=walking",
+          "steps": [
+            "Walk to DON DON DONKI Ximen.",
+            "Browse Japanese snacks, groceries and novelty items.",
+            "Purchase small items if desired.",
+            "Avoid buying all pasalubong on Day 1.",
+            "Leave around 8:50 PM."
+          ],
+          "notes": [
+            {
+              "label": "Reminders",
+              "text": "Free entrance. Shopping excluded from planned budget."
+            },
+            {
+              "label": "If delayed / contingency",
+              "text": "Skip if exhausted."
+            }
+          ],
+          "guide": [],
+          "summary": true,
+          "category": "explore"
+        },
+        {
+          "id": "07-23",
+          "time": "9:00 PM onward",
+          "title": "Return to Hotel",
+          "location": "Airline Inn Taipei Ximen",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&destination=Airline%20Inn%20Taipei%20Ximen&origin=Ximending%20Taipei&travelmode=walking",
+          "steps": [
+            "Walk back to the hotel.",
+            "Charge electronics.",
+            "Check EasyCard balances.",
+            "Prepare clothing and travel essentials for November 8.",
+            "Sleep."
+          ],
+          "notes": [
+            {
+              "label": "Reminders",
+              "text": "No public transport needed within Ximending."
+            },
+            {
+              "label": "If delayed / contingency",
+              "text": "Rest earlier if the day has been exhausting."
+            }
+          ],
+          "guide": [],
+          "summary": false,
+          "category": "stay"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "label": "Day 2",
+      "title": "City streets & mountain air",
+      "subtitle": "Ximending → Qingtiangang → Shilin Night Market",
+      "activities": [
+        {
+          "id": "08-01",
+          "time": "7:30–8:10 AM",
+          "title": "Breakfast: 艋舺人清粥小菜",
+          "location": "Kunming Street, Ximending.",
+          "cost": [
+            240,
+            420
+          ],
+          "maps": "https://www.google.com/maps/search/?api=1&query=艋舺人清粥小菜+昆明街",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Area:** Kunming Street, Ximending."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Planning budget:** NT$240–420 for 2 (≈ ₱472–827; ₱236–413/person)."
+            },
+            {
+              "kind": "ordered",
+              "text": "From **Airline Inn Taipei Ximen**, navigate to 艋舺人清粥小菜 near Kunming Street; allow walking time."
+            },
+            {
+              "kind": "ordered",
+              "text": "**Priority order: 清蒸鮮魚 — Steamed Fresh Fish**, menu photo reference **NT$190**."
+            },
+            {
+              "kind": "ordered",
+              "text": "**Other orders are allowed:** congee, rice, vegetables and other breakfast dishes depending on appetite. This is **not** a fixed set menu."
+            },
+            {
+              "kind": "ordered",
+              "text": "Ask for **少油 (shǎo yóu)** = less oil, if needed. Finish around 8:10 AM."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Diet note:** Steamed and lower-fat dishes may be easier to tolerate with gallstones, but individual triggers vary; avoid heavily oily accompaniments."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Backup:** Check restaurant opening hours before travel; if unavailable choose a quick nearby light breakfast."
+            }
+          ],
+          "summary": true,
+          "category": "food"
+        },
+        {
+          "id": "08-02",
+          "time": "8:10–8:30 AM",
+          "title": "Rainbow Six Crossing",
+          "location": "",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/search/?api=1&query=Rainbow+Six+Crossing+Ximending",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Cost:** Free."
+            },
+            {
+              "kind": "ordered",
+              "text": "Walk to **Ximen MRT Exit 6** near Hanzhong Street."
+            },
+            {
+              "kind": "ordered",
+              "text": "Find the famous Rainbow Six painted street."
+            },
+            {
+              "kind": "ordered",
+              "text": "Take full-body OOTD photos, couple photos, wide-angle city shots and a short walking video."
+            },
+            {
+              "kind": "ordered",
+              "text": "Keep the pedestrian route clear and walk toward The Red House."
+            }
+          ],
+          "summary": true,
+          "category": "explore"
+        },
+        {
+          "id": "08-03",
+          "time": "8:30–8:50 AM",
+          "title": "The Red House (西門紅樓)",
+          "location": "",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/search/?api=1&query=The+Red+House+Ximending",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Cost:** Free exterior photos."
+            },
+            {
+              "kind": "ordered",
+              "text": "Walk to The Red House at **No. 10 Chengdu Road**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Photograph the octagonal red-brick façade, entrance, windows and symmetrical angles."
+            },
+            {
+              "kind": "ordered",
+              "text": "Continue to nearby Taipei Tianhou Temple."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** On Sunday morning, the focus is outside because indoor shops typically open later."
+            }
+          ],
+          "summary": true,
+          "category": "explore"
+        },
+        {
+          "id": "08-04",
+          "time": "8:50–9:10 AM",
+          "title": "Taipei Tianhou Temple (台北天后宮)",
+          "location": "",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/search/?api=1&query=Taipei+Tianhou+Temple",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Cost:** Generally free."
+            },
+            {
+              "kind": "ordered",
+              "text": "Walk to **No. 51 Chengdu Road**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Explore the ornate entryway, colorful roof carvings, lanterns and traditional temple architecture."
+            },
+            {
+              "kind": "ordered",
+              "text": "Take respectful exterior/courtyard pictures where photography is permitted."
+            },
+            {
+              "kind": "ordered",
+              "text": "Continue toward Nishi Honganji Square."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** Respect worshippers and any no-photography signs."
+            }
+          ],
+          "summary": true,
+          "category": "explore"
+        },
+        {
+          "id": "08-05",
+          "time": "9:10–9:35 AM",
+          "title": "Nishi Honganji Square (西本願寺廣場)",
+          "location": "",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/search/?api=1&query=Nishi+Honganji+Square+Taipei",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Cost:** Free outdoor visit."
+            },
+            {
+              "kind": "ordered",
+              "text": "Walk toward the square near Zhonghua Road."
+            },
+            {
+              "kind": "ordered",
+              "text": "Find the bell tower and Japanese-era red-brick heritage structures."
+            },
+            {
+              "kind": "ordered",
+              "text": "Take architecture, couple and greenery photos."
+            },
+            {
+              "kind": "ordered",
+              "text": "Enjoy a relaxed short walk before returning to the pedestrian area."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Backup:** Cut this to 10–15 minutes if delayed."
+            }
+          ],
+          "summary": true,
+          "category": "explore"
+        },
+        {
+          "id": "08-06",
+          "time": "9:35–10:05 AM",
+          "title": "Ximending Walking District",
+          "location": "",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/search/?api=1&query=Ximending+Walking+District+Taipei",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Cost:** Free; shopping optional and excluded from budget."
+            },
+            {
+              "kind": "ordered",
+              "text": "Stroll around **Hanzhong Street, Wuchang Street** and nearby pedestrian blocks."
+            },
+            {
+              "kind": "ordered",
+              "text": "Photograph colorful signs, shops, streetscapes and OOTDs."
+            },
+            {
+              "kind": "ordered",
+              "text": "Note that many shops may still be closed this early."
+            },
+            {
+              "kind": "ordered",
+              "text": "Head back toward Airline Inn by 10:05 AM."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Backup:** This is one of the easiest stops to shorten if running late."
+            }
+          ],
+          "summary": true,
+          "category": "explore"
+        },
+        {
+          "id": "08-07",
+          "time": "10:05–10:40 AM",
+          "title": "Hotel break / outfit change",
+          "location": "Airline Inn Taipei Ximen, No. 59, Section 1, Zhonghua Road, Taipei.",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/search/?api=1&query=Airline+Inn+Taipei+Ximen",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Location:** Airline Inn Taipei Ximen, **No. 59, Section 1, Zhonghua Road, Taipei**."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Cost:** Free."
+            },
+            {
+              "kind": "ordered",
+              "text": "Return to the hotel intentionally after the photo walk."
+            },
+            {
+              "kind": "ordered",
+              "text": "Rest, use the restroom and **change clothes if desired**."
+            },
+            {
+              "kind": "ordered",
+              "text": "For Qingtiangang, change into **comfortable straight-cut trousers, walking shoes with good grip, and a lightweight windbreaker**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Take EasyCard, phone with Taiwan eSIM, water, umbrella/rain protection, light snacks and a power bank."
+            },
+            {
+              "kind": "ordered",
+              "text": "Leave unnecessary shopping/items in the room. **Leave around 10:40 AM.**"
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Backup:** Reduce the break to 15–20 minutes if morning sightseeing ran late."
+            }
+          ],
+          "summary": false,
+          "category": "stay"
+        },
+        {
+          "id": "08-08",
+          "time": "10:40–11:00 AM",
+          "title": "Walk to lunch",
+          "location": "",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/search/?api=1&query=Full+Pond+Tainan+Milkfish+Ximen+Branch",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Cost:** Free."
+            },
+            {
+              "kind": "ordered",
+              "text": "Open the map pin for **Full Pond Tainan Milkfish — Ximen Branch**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Walk from Airline Inn toward the branch; check the **correct branch** before leaving the hotel."
+            },
+            {
+              "kind": "ordered",
+              "text": "Arrive close to its opening time and check the lunch queue."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** Confirm exact location and current Sunday hours in advance."
+            }
+          ],
+          "summary": false,
+          "category": "food"
+        },
+        {
+          "id": "08-09",
+          "time": "11:00–11:35 AM",
+          "title": "Lunch: Full Pond Tainan Milkfish — Ximen Branch",
+          "location": "",
+          "cost": [
+            440,
+            550
+          ],
+          "maps": "https://www.google.com/maps/search/?api=1&query=Full+Pond+Tainan+Milkfish+Ximen+Branch",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Planning budget:** NT$440–550 for 2 (≈ ₱866–1,082; ₱433–541/person)."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Potential lunch orders (choose on-site):**"
+            },
+            {
+              "kind": "bullet",
+              "text": "**海鮮粥 — Seafood Congee:** online reference **NT$225/bowl**."
+            },
+            {
+              "kind": "bullet",
+              "text": "**海鮮米粉 — Seafood Rice Vermicelli Soup:** online reference **NT$220/bowl**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Enter the Ximen branch and check the actual menu."
+            },
+            {
+              "kind": "ordered",
+              "text": "Choose either of the dishes above; both diners may order the same or different bowls."
+            },
+            {
+              "kind": "ordered",
+              "text": "Ask for less oil and avoid deep-fried toppings if preferred."
+            },
+            {
+              "kind": "ordered",
+              "text": "Pay and **leave by ~11:35 AM** to reach Shilin in time."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Note:** Prices above are previous online menu references; dine-in prices may differ. **35 minutes is a tight meal window**, especially if there is a queue."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Backup:** Use a quicker nearby meal if the wait is too long, or accept a later S15 rather than rushing unsafely."
+            }
+          ],
+          "summary": true,
+          "category": "food"
+        },
+        {
+          "id": "08-10",
+          "time": "11:35 AM–12:15 PM",
+          "title": "MRT Ximen → Shilin Station",
+          "location": "",
+          "cost": [
+            60,
+            80
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&origin=Ximen+Station+Taipei&destination=Shilin+Station+Taipei&travelmode=transit",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Planning fare:** NT$60–80 for 2 (≈ ₱118–157)."
+            },
+            {
+              "kind": "ordered",
+              "text": "Walk to **Ximen MRT Station G12 / BL11**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Take the **Green Line (Songshan–Xindian)** toward **Songshan**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Get off at **Zhongshan Station G14**, passing Beimen."
+            },
+            {
+              "kind": "ordered",
+              "text": "Transfer to **Red Line (Tamsui–Xinyi)** heading toward **Tamsui** or another northbound service serving Shilin."
+            },
+            {
+              "kind": "ordered",
+              "text": "Get off at **Shilin Station R16**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Follow signs to **Exit 1 / Zhongzheng Road** and locate the S15 bus boarding stop."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Planning time:** 30–40 minutes including walking and transfer."
+            }
+          ],
+          "summary": false,
+          "category": "transport"
+        },
+        {
+          "id": "08-11",
+          "time": "12:15–12:33 PM",
+          "title": "Find S15 stop; prepare to board",
+          "location": "捷運士林站(中正) — MRT Shilin Station (Zhongzheng).",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": null,
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Stop:** **捷運士林站(中正) — MRT Shilin Station (Zhongzheng)**."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Cost:** Free to wait."
+            },
+            {
+              "kind": "ordered",
+              "text": "Find the stop for **小15 (S15) toward 擎天崗 (Qingtiangang)**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Check bus signage and the official live tracker."
+            },
+            {
+              "kind": "ordered",
+              "text": "Queue on the correct side of Zhongzheng Road; have EasyCard ready."
+            },
+            {
+              "kind": "ordered",
+              "text": "Aim to be at the stop by 12:15–12:20 PM."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Crucial:** Some S15 trips are short-turn services. Board only a bus displaying the **full Qingtiangang destination**."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Uphill tracker:** [Open reference](https://ebus.gov.taipei/EBus/VsSimpleMap?gb=0&routeid=0151001500)"
+            }
+          ],
+          "summary": false,
+          "category": "transport"
+        },
+        {
+          "id": "08-12",
+          "time": "Target 12:33 PM–~1:30 PM",
+          "title": "S15 to Qingtiangang",
+          "location": "",
+          "cost": [
+            30,
+            30
+          ],
+          "maps": null,
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Preferred transport:** 小15 (S15), regular public mountain bus."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Planning time:** ~50–65 minutes."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Planning fare:** NT$15/person; NT$30 for 2 (≈ ₱59 total). Verify current fare."
+            },
+            {
+              "kind": "ordered",
+              "text": "Verify destination display says **擎天崗**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Board S15 and follow EasyCard tap instructions."
+            },
+            {
+              "kind": "ordered",
+              "text": "Sit when possible; winding mountain roads and Sunday crowds can make the ride uncomfortable if standing."
+            },
+            {
+              "kind": "ordered",
+              "text": "Follow progress on maps and alight at **Qingtiangang 擎天崗**."
+            },
+            {
+              "kind": "ordered",
+              "text": "**Before exploring, immediately check the downhill return-bus options.**"
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Bus comfort:** Ordinary functional public bus / smaller city bus, **not premium tourist coach**; air-conditioning or seat availability cannot be guaranteed for a specific trip."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**If the 12:33 bus is missed:** Check later full-route S15 services, alternative connections (R5 + 108), or a real Uber quote. **Uber from Shilin to Qingtiangang** was budgeted at roughly **NT$400–650 per car**, an estimate not a live quote."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Uphill tracker:** [Open reference](https://ebus.gov.taipei/EBus/VsSimpleMap?gb=0&routeid=0151001500)"
+            }
+          ],
+          "summary": false,
+          "category": "transport"
+        },
+        {
+          "id": "08-13",
+          "time": "~1:30–3:45 PM",
+          "title": "Qingtiangang Grassland (擎天崗)",
+          "location": "",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/search/?api=1&query=Qingtiangang+Grassland",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Admission:** Free."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Priority:** Main nature destination of the day."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Suggested activities:**"
+            },
+            {
+              "kind": "bullet",
+              "text": "Visit the nearby visitor information/restroom facilities first."
+            },
+            {
+              "kind": "bullet",
+              "text": "Take wide-angle photos of the rolling green hills and panoramic mountain scenery."
+            },
+            {
+              "kind": "bullet",
+              "text": "Walk on **designated trails and fenced visitor paths**, stopping at viewpoints."
+            },
+            {
+              "kind": "bullet",
+              "text": "Look for water buffalo from a **safe distance**; never approach, feed or touch them."
+            },
+            {
+              "kind": "bullet",
+              "text": "Look for seasonal silvergrass, weather and conditions permitting."
+            },
+            {
+              "kind": "bullet",
+              "text": "Relax and enjoy nature, not necessarily the full ~2.4 km circular trail."
+            },
+            {
+              "kind": "bullet",
+              "text": "Start moving back to the bus stop by **3:40–3:45 PM**."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**What to wear:** Comfortable sneakers/trail-capable walking shoes with traction, relaxed trousers, T-shirt plus lightweight windbreaker; keep an umbrella/rain layer handy. It may be colder, foggier and windier than central Taipei."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Important tradeoff:** Previously discussed a ~3-hour stay, but the **12:33 uphill and ~4 PM return targets** make this approximately **2–2.5 hours**, depending on arrival and the real downhill bus. For a full 3 hours, the return must move later and be checked against actual downhill service and daylight."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Rules:** This is a protected grassland rather than a free-roam field like a general city park. Stay on allowed paths; watch for closures and buffalo restrictions."
+            }
+          ],
+          "summary": true,
+          "category": "explore"
+        },
+        {
+          "id": "08-14",
+          "time": "Around 4:00 PM TARGET",
+          "title": "Qingtiangang → Shilin",
+          "location": "",
+          "cost": [
+            30,
+            50
+          ],
+          "maps": null,
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**IMPORTANT: NOT a confirmed 4:00 PM S15 departure.**"
+            },
+            {
+              "kind": "ordered",
+              "text": "Arrive at the Qingtiangang stop around **3:45 PM**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Check **downhill S15 (小15) toward Jiantan / Shilin** on the tracker."
+            },
+            {
+              "kind": "ordered",
+              "text": "Take the next suitable confirmed bus; verify its stops, especially if getting off near Shilin Night Market."
+            },
+            {
+              "kind": "ordered",
+              "text": "If there is no useful S15, consider **Bus 108** toward Yangmingshan Bus Terminal, then **R5 (紅5)** toward Shilin/Jiantan, subject to operating hours and actual connections."
+            },
+            {
+              "kind": "ordered",
+              "text": "Taxi/Uber may be a fallback **if a driver accepts**, but mountain pickup availability can be limited."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Downhill fare allowance:** NT$30–50 total for 2, depending on route/transfer."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Downhill tracker:** [Open reference](https://ebus.gov.taipei/EBus/VsSimpleMap?gb=1&routeid=0151001500)"
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Safety rule:** Verify the last practical transport down **before hiking**. If the return service is delayed, shorten or skip the Shilin evening activities."
+            }
+          ],
+          "summary": false,
+          "category": "explore"
+        },
+        {
+          "id": "08-15",
+          "time": "~5:00–5:20 PM",
+          "title": "Arrive in Shilin; walk to night market",
+          "location": "",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/search/?api=1&query=Shilin+Night+Market",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Cost:** Free walking."
+            },
+            {
+              "kind": "ordered",
+              "text": "Get off near Shilin or Jiantan, depending on the actual bus service."
+            },
+            {
+              "kind": "ordered",
+              "text": "Follow Google Maps toward **Shilin Night Market / Danan Road**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Enter the area from the Shilin side and gradually work toward **Jiantan Station** for your return trip."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Note:** 5 PM is an estimate, not a promised arrival."
+            }
+          ],
+          "summary": false,
+          "category": "transport"
+        },
+        {
+          "id": "08-16",
+          "time": "5:20–5:45 PM",
+          "title": "Shilin Cixian Temple (OPTIONAL)",
+          "location": "No. 84 Danan Road, Shilin.",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/search/?api=1&query=Shilin+Cixian+Temple",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Location:** No. 84 Danan Road, Shilin."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Admission:** Free."
+            },
+            {
+              "kind": "ordered",
+              "text": "See the ornate Mazu temple roof, entrance, red lanterns and carvings."
+            },
+            {
+              "kind": "ordered",
+              "text": "Take photos where allowed and avoid disturbing worshippers."
+            },
+            {
+              "kind": "ordered",
+              "text": "Walk into the adjacent night-market streets."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Skip if:** Late from Qingtiangang, tired, or would rather spend time at the night market."
+            }
+          ],
+          "summary": true,
+          "category": "explore"
+        },
+        {
+          "id": "08-17",
+          "time": "5:45–8:45 PM",
+          "title": "Shilin Night Market (Dinner/snacks)",
+          "location": "",
+          "cost": [
+            450,
+            900
+          ],
+          "maps": "https://www.google.com/maps/search/?api=1&query=Shilin+Night+Market",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Planning allowance:** NT$450–900 for 2 (≈ ₱886–1,771), excluding optional shopping. Flexible snacks may replace a sit-down dinner."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Activities:**"
+            },
+            {
+              "kind": "bullet",
+              "text": "Food crawl: grilled mushrooms, fish-ball soup, grilled squid, aiyu jelly, drinks and other interesting snacks."
+            },
+            {
+              "kind": "bullet",
+              "text": "Browse clothes, sneakers, accessories and souvenirs along Danan/Dadong/Jihe Road areas."
+            },
+            {
+              "kind": "bullet",
+              "text": "Optional carnival games like ring toss and balloon popping; ask prices first."
+            },
+            {
+              "kind": "bullet",
+              "text": "Optional seated break at the Shilin Market food court."
+            },
+            {
+              "kind": "bullet",
+              "text": "Begin heading to Jiantan MRT around **8:45–9 PM**."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Gallstone note:** Choose lower-oil preparations, smaller portions and foods personally tolerated; avoid making heavily deep-fried snacks the main meal."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Backup:** If you reach Shilin late, just enjoy a short food crawl and skip temple, games and extended shopping."
+            }
+          ],
+          "summary": true,
+          "category": "food"
+        },
+        {
+          "id": "08-18",
+          "time": "~9:00–9:40 PM",
+          "title": "MRT Shilin Night Market → Airline Inn",
+          "location": "",
+          "cost": [
+            50,
+            60
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&origin=Jiantan+Station+Taipei&destination=Airline+Inn+Taipei+Ximen&travelmode=transit",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Planning fare:** NT$25–30/person; NT$50–60 for 2 (≈ ₱98–118)."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Planning total time:** ~25–40 minutes including walking."
+            },
+            {
+              "kind": "ordered",
+              "text": "Walk to **Jiantan MRT Station (R15)**, normally closer to the main night-market area than Shilin Station."
+            },
+            {
+              "kind": "ordered",
+              "text": "Take the **Red Line toward Xiangshan (象山)**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Get off at **Zhongshan Station (R11)** (4 stops)."
+            },
+            {
+              "kind": "ordered",
+              "text": "Transfer to **Green Line toward Xindian (新店)**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Get off at **Ximen Station (G12)** (2 stops, via Beimen)."
+            },
+            {
+              "kind": "ordered",
+              "text": "Use **Ximen Exit 2** toward Zhonghua Road, then walk to **Airline Inn Taipei Ximen**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Rest, charge devices and prepare for November 9's northern-coast day tour."
+            }
+          ],
+          "summary": false,
+          "category": "transport"
+        }
+      ],
+      "notice": "S15 12:33 PM uphill and ~4:00 PM return are planning targets, not confirmed departures. Check the return buses before exploring. Qingtiangang takes priority over optional Shilin stops.",
+      "extra": {
+        "title": "Bad-weather backup · Beitou",
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "**Replace:** S15 uphill, Qingtiangang and Qingtiangang downhill."
+          },
+          {
+            "kind": "paragraph",
+            "text": "**Do not treat Beitou as an extra stop on the mountain-day version.**"
+          },
+          {
+            "kind": "paragraph",
+            "text": "**Suggested attractions:** Beitou Park, Beitou Hot Spring Museum, Thermal Valley (viewing only), hot-spring neighborhood sightseeing. Indoor and operating hours need verification on November 8; paid hot-spring bathing is optional and **not included**."
+          },
+          {
+            "kind": "paragraph",
+            "text": "**Transport:**"
+          },
+          {
+            "kind": "ordered",
+            "text": "Ximen MRT **G12** → Green Line toward Songshan → **Zhongshan G14**."
+          },
+          {
+            "kind": "ordered",
+            "text": "Transfer to Red Line toward **Beitou**."
+          },
+          {
+            "kind": "ordered",
+            "text": "At **Beitou Station**, transfer to the short Xinbeitou branch service."
+          },
+          {
+            "kind": "ordered",
+            "text": "Alight at **Xinbeitou** and follow signs toward Beitou Park / Thermal Valley."
+          },
+          {
+            "kind": "ordered",
+            "text": "Return by the same MRT branch and Red Line; adjust Shilin evening based on the actual time."
+          },
+          {
+            "kind": "paragraph",
+            "text": "**Illustrative transit allowance:** NT$100–220 for 2. Bathing facilities, if chosen, are extra."
+          },
+          {
+            "kind": "paragraph",
+            "text": "**Weather:** [Open reference](https://www.cwa.gov.tw/eng/)"
+          }
+        ],
+        "maps": "https://www.google.com/maps/search/?api=1&query=Beitou+Thermal+Valley"
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "label": "Day 3",
+      "title": "Along the northern coast",
+      "subtitle": "Tiaoshi → Yehliu → Shifen → Jiufen → Guilin",
+      "activities": [
+        {
+          "id": "09-01",
+          "time": "8:00–9:00 AM",
+          "title": "Breakfast & Preparation",
+          "location": "",
+          "cost": [
+            300,
+            300
+          ],
+          "maps": null,
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Goal:** Eat a light breakfast and be ready for a full-day outdoor tour."
+            },
+            {
+              "kind": "ordered",
+              "text": "Check the weather, shower, dress comfortably and wear good walking shoes."
+            },
+            {
+              "kind": "ordered",
+              "text": "Have breakfast near the hotel; breakfast venue not selected."
+            },
+            {
+              "kind": "ordered",
+              "text": "Bring passport copy/ID if required by tour operator, booking voucher/QR code, EasyCard, cash, phone, powerbank, charging cable, water, sunscreen and a compact umbrella or rain jacket."
+            },
+            {
+              "kind": "ordered",
+              "text": "Check luggage/handbag security and leave bulky belongings at the hotel."
+            },
+            {
+              "kind": "ordered",
+              "text": "Confirm the operator's **exact meeting point, official call time, guide identification and contact instructions**."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Food note:** Since lighter food is preferred, avoid a large greasy breakfast; choose foods tolerated personally."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Planned breakfast allowance:** **NT$300 for two (≈ ₱590; ₱295/person)**, provisional."
+            }
+          ],
+          "summary": true,
+          "category": "food"
+        },
+        {
+          "id": "09-02",
+          "time": "Around 9:00 AM",
+          "title": "Travel to the Tour Meeting Point",
+          "location": "",
+          "cost": [
+            100,
+            100
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&origin=Airline+Inn+Taipei+Ximen&destination=Taipei+Main+Station&travelmode=transit",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Starting point:** Airline Inn Taipei Ximen, 1F, No. 59, Section 1, Zhonghua Road, Taipei."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Important:** Exact meeting point for the selected Tiaoshi variant is **not confirmed**. Do not assume Taipei Main Station East Gate 3 because that may be the meeting point for a different activity/variant."
+            },
+            {
+              "kind": "paragraph",
+              "text": "If the operator confirms **Taipei Main Station**:"
+            },
+            {
+              "kind": "ordered",
+              "text": "Walk from hotel to Ximen MRT."
+            },
+            {
+              "kind": "ordered",
+              "text": "Take the Blue Line one stop toward Nangang Exhibition Center to Taipei Main Station."
+            },
+            {
+              "kind": "ordered",
+              "text": "Follow signs to the specific meeting exit and allow extra time for the large station."
+            },
+            {
+              "kind": "ordered",
+              "text": "Show the guide the Klook voucher and confirm bus/return instructions."
+            },
+            {
+              "kind": "paragraph",
+              "text": "If the operator confirms an **Ximen-area meeting point**, walk directly to that specified address instead."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Planning allowance for local transit:** NT$100 for 2 adults for the day (≈ ₱197), subject to actual meeting and drop-off points."
+            }
+          ],
+          "summary": false,
+          "category": "transport"
+        },
+        {
+          "id": "09-03",
+          "time": "Target 9:30–9:40 AM",
+          "title": "Check-in / Assembly",
+          "location": "",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": null,
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "*This is the recommended early-arrival buffer, not an official operator call time.*"
+            },
+            {
+              "kind": "bullet",
+              "text": "Locate the tour guide, sign/flag or bus."
+            },
+            {
+              "kind": "bullet",
+              "text": "Have both passengers' booking details ready."
+            },
+            {
+              "kind": "bullet",
+              "text": "Confirm vehicle number, emergency contact, group chat/guide contact, exact return stop and late-arrival rules."
+            },
+            {
+              "kind": "bullet",
+              "text": "Ask about the admission ticket and single-color lantern purchase, and whether the guide arranges group purchases."
+            },
+            {
+              "kind": "bullet",
+              "text": "Be ready for the **10:00 AM** departure."
+            }
+          ],
+          "summary": false,
+          "category": "explore"
+        },
+        {
+          "id": "09-04",
+          "time": "10:00 AM → estimated evening",
+          "title": "One Grouped Klook Full-Day Tour",
+          "location": "Tiaoshi Coast · Yehliu · Shifen · Jiufen",
+          "cost": [
+            440,
+            440
+          ],
+          "maps": null,
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Selected package:** Yehliu + Jiufen + Shifen + **Tiaoshi Coast**, organized shared group tour."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Booking link:** [Open reference](https://www.klook.com/en-PH/activity/93318-yehliu-jiufen-shifen-shifen-waterfall-day-tour/)"
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Quoted package price:** **₱3,762 for two** based on selected Klook screenshot."
+            }
+          ],
+          "summary": true,
+          "category": "explore",
+          "costPHP": [
+            3762,
+            3762
+          ],
+          "summaryStops": [
+            {
+              "time": "11:30–11:50 AM",
+              "title": "Tiaoshi Coast",
+              "cost": [
+                0,
+                0
+              ]
+            },
+            {
+              "time": "12:20–1:35 PM",
+              "title": "Yehliu Geopark",
+              "cost": [
+                240,
+                240
+              ]
+            },
+            {
+              "time": "Afternoon · TBD",
+              "title": "Shifen Old Street · shared lantern",
+              "cost": [
+                200,
+                200
+              ]
+            },
+            {
+              "time": "Afternoon/evening · TBD",
+              "title": "Jiufen Old Street",
+              "cost": [
+                0,
+                0
+              ]
+            }
+          ],
+          "tourStops": [
+            {
+              "title": "Tiaoshi Coast (11:30–11:50 AM; 20 minutes)",
+              "photoKey": "tiaoshi",
+              "blocks": [
+                {
+                  "kind": "bullet",
+                  "text": "**Priority:** Famous seaside bus-stop photo spot, including individual and couple photos."
+                },
+                {
+                  "kind": "bullet",
+                  "text": "Go straight to the photo spot because the scheduled stop is short."
+                },
+                {
+                  "kind": "bullet",
+                  "text": "On Mondays, crowds may be more manageable than weekends, but there is **no guaranteed short queue**; group-tour arrivals can cause waiting."
+                },
+                {
+                  "kind": "bullet",
+                  "text": "Stay off active roadways and follow guide's reassembly time."
+                }
+              ],
+              "maps": "https://www.google.com/maps/search/?api=1&query=Tiaoshi+Coast+Bus+Stop+Taiwan"
+            },
+            {
+              "title": "Yehliu Geopark (12:20–1:35 PM; 75 minutes)",
+              "photoKey": "yehliu",
+              "blocks": [
+                {
+                  "kind": "bullet",
+                  "text": "Entrance is **budgeted separately**, pending verification of exact package inclusions."
+                },
+                {
+                  "kind": "bullet",
+                  "text": "**Admission estimate:** NT$120/adult × 2 = **NT$240** (≈ ₱472 total)."
+                },
+                {
+                  "kind": "bullet",
+                  "text": "Prioritize Queen's Head, rock formations and coastal views. If the Queen's Head queue is long, take alternative nearby photos to avoid missing the tour departure."
+                },
+                {
+                  "kind": "bullet",
+                  "text": "Follow the guide's time limit and any park safety restrictions."
+                }
+              ],
+              "maps": "https://www.google.com/maps/search/?api=1&query=Yehliu+Geopark+Taiwan"
+            },
+            {
+              "title": "Shifen Old Street (time to be confirmed)",
+              "photoKey": "shifen",
+              "blocks": [
+                {
+                  "kind": "bullet",
+                  "text": "**Planned experience:** Buy **one single-color lantern**, shared by both adults."
+                },
+                {
+                  "kind": "bullet",
+                  "text": "**Lantern estimate:** **NT$200** (≈ ₱394 total, ≈ ₱197/person when shared)."
+                },
+                {
+                  "kind": "bullet",
+                  "text": "Write your wishes on the lantern, take photos/videos, and release only with shop staff guidance at permitted location."
+                },
+                {
+                  "kind": "bullet",
+                  "text": "Tour guides may help organize purchases in advance, but this is not guaranteed."
+                },
+                {
+                  "kind": "bullet",
+                  "text": "**Shifen Waterfall is unconfirmed** for the selected Tiaoshi Coast package."
+                }
+              ],
+              "maps": "https://www.google.com/maps/search/?api=1&query=Shifen+Old+Street+Taiwan"
+            },
+            {
+              "title": "Jiufen Old Street (time to be confirmed)",
+              "photoKey": "jiufen",
+              "blocks": [
+                {
+                  "kind": "bullet",
+                  "text": "Explore the red lantern-lined streets, scenery, photo spots, tea shops and souvenir stalls."
+                },
+                {
+                  "kind": "bullet",
+                  "text": "Expect steps, slopes, narrow lanes and possible crowding."
+                },
+                {
+                  "kind": "bullet",
+                  "text": "Optional tea/snack/souvenir spending is not included in the base budget."
+                },
+                {
+                  "kind": "bullet",
+                  "text": "Be at the designated meeting point before the guide's announced time."
+                }
+              ],
+              "maps": "https://www.google.com/maps/search/?api=1&query=Jiufen+Old+Street+Taiwan"
+            }
+          ],
+          "afterBlocks": [
+            {
+              "kind": "heading",
+              "text": "Reviews & Booking Notes"
+            },
+            {
+              "kind": "bullet",
+              "text": "The Klook activity previously showed a **4.9/5 overall rating**, but that rating aggregates several tour variants and **is not a separate Tiaoshi-package score**."
+            },
+            {
+              "kind": "bullet",
+              "text": "Prior review summary: Tiaoshi-variant customers generally appreciated the scenic coast, guide organization, photo help and logistics; other activity reviews mentioned large shared groups, stairs at Jiufen and queuing at attractions."
+            },
+            {
+              "kind": "bullet",
+              "text": "Treat user reviews as individual experiences, not guaranteed service promises."
+            },
+            {
+              "kind": "bullet",
+              "text": "The screenshot showed **instant confirmation, guaranteed departure and a free-cancellation option with 24-hour notice**; confirm the actual cutoff and package terms at checkout."
+            },
+            {
+              "kind": "bullet",
+              "text": "Do not assume the geopark admission, lantern or meals are included until the exact variant's **What's included / not included** panel has been reviewed."
+            },
+            {
+              "kind": "bullet",
+              "text": "**Pickup, call time, drop-off location, exact Shifen/Jiufen timing and end time still need final operator confirmation**."
+            }
+          ]
+        },
+        {
+          "id": "09-05",
+          "time": "Estimated 7:15–8:45 PM",
+          "title": "Tour Return / Transfer to Guilin",
+          "location": "",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&destination=Carrefour+Guilin+Taipei&travelmode=transit",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "ordered",
+              "text": "Check the confirmed Klook return location; this is not verified yet."
+            },
+            {
+              "kind": "ordered",
+              "text": "Navigate to the Guilin/Carrefour shopping area by MRT/taxi/walking as appropriate."
+            },
+            {
+              "kind": "ordered",
+              "text": "Head to Sushi Express first if you arrive near its closing/last-order time."
+            },
+            {
+              "kind": "ordered",
+              "text": "If the tour finishes late, consider a different dinner open later and then shop, or shorten shopping."
+            }
+          ],
+          "summary": false,
+          "category": "transport"
+        },
+        {
+          "id": "09-06",
+          "time": "Target 8:45–9:30 PM",
+          "title": "Dinner: Sushi Express",
+          "location": "",
+          "cost": [
+            480,
+            480
+          ],
+          "maps": "https://www.google.com/maps/search/?api=1&query=Sushi+Express+Carrefour+Guilin+Taipei",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Selected dinner:** Sushi Express, preferred Guilin/Carrefour area branch. **Confirm exact branch, operating status, closing time and last order** before this day; previous guidance mentioned around 9:30 PM but this is not guaranteed."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Suggested lighter options:**"
+            },
+            {
+              "kind": "bullet",
+              "text": "Shrimp nigiri."
+            },
+            {
+              "kind": "bullet",
+              "text": "Plain tuna/fish nigiri."
+            },
+            {
+              "kind": "bullet",
+              "text": "Miso soup or steamed egg, if available."
+            },
+            {
+              "kind": "bullet",
+              "text": "Limit fried, mayo-heavy and fatty dishes if they trigger symptoms."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Dinner planning range for 2:** NT$360–600 (≈ ₱708–1,181; ₱354–590 per person)."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Budget midpoint used below:** NT$480 (≈ ₱945 total)."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Backup approach if delayed:** Have a later meal at an operating nearby restaurant; keep Carrefour shopping flexible. No specific backup restaurant finalized."
+            }
+          ],
+          "summary": true,
+          "category": "food"
+        },
+        {
+          "id": "09-07",
+          "time": "Target 9:30–10:30 PM",
+          "title": "Carrefour Pasalubong Shopping",
+          "location": "",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/search/?api=1&query=Carrefour+Guilin+Taipei",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Shopping destination:** Carrefour Guilin area, Wanhua District, Taipei. A prior discussion noted rebranding, so **confirm current supermarket/store name, exact unit and operating hours** before November 9."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Priority purchases:**"
+            },
+            {
+              "kind": "bullet",
+              "text": "Pineapple cakes."
+            },
+            {
+              "kind": "bullet",
+              "text": "Taiwanese cookies and biscuits."
+            },
+            {
+              "kind": "bullet",
+              "text": "Mochi/packaged sweets."
+            },
+            {
+              "kind": "bullet",
+              "text": "Tea."
+            },
+            {
+              "kind": "bullet",
+              "text": "Chocolates and packaged snacks."
+            },
+            {
+              "kind": "bullet",
+              "text": "Instant noodles, if luggage space allows."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Suggested plan:** 1–1.5 hours; shorten/shift if the day tour is delayed or you are tired."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Editable provisional shopping allocation:** **₱1,000 for two**, not a confirmed spend."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Carry-on note:** Cebu Pacific hand-carry allowance planned at **10 kg per traveler**; check current ticket allowance and liquid restrictions. Bring reusable bags and keep receipts."
+            }
+          ],
+          "summary": true,
+          "category": "explore",
+          "costPHP": [
+            1000,
+            1000
+          ]
+        },
+        {
+          "id": "09-08",
+          "time": "Around 10:30–10:45 PM onward",
+          "title": "Return to Hotel / Rest",
+          "location": "",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&origin=Carrefour+Guilin+Taipei&destination=Airline+Inn+Taipei+Ximen&travelmode=walking",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "bullet",
+              "text": "Return to Airline Inn Taipei Ximen."
+            },
+            {
+              "kind": "bullet",
+              "text": "Organize groceries and receipts."
+            },
+            {
+              "kind": "bullet",
+              "text": "Charge devices and powerbanks."
+            },
+            {
+              "kind": "bullet",
+              "text": "Prepare for November 10 and check next day's weather."
+            }
+          ],
+          "summary": false,
+          "category": "stay"
+        }
+      ],
+      "budgetItems": [
+        {
+          "title": "Klook tour · 2 adults",
+          "cost": [
+            0,
+            0
+          ],
+          "costPHP": [
+            3762,
+            3762
+          ]
+        },
+        {
+          "title": "Yehliu admission · 2 tickets",
+          "cost": [
+            240,
+            240
+          ]
+        },
+        {
+          "title": "Sky lantern · 1 shared",
+          "cost": [
+            200,
+            200
+          ]
+        },
+        {
+          "title": "Breakfast",
+          "cost": [
+            300,
+            300
+          ]
+        },
+        {
+          "title": "Local transit allowance",
+          "cost": [
+            100,
+            100
+          ]
+        },
+        {
+          "title": "Sushi Express · dinner midpoint",
+          "cost": [
+            480,
+            480
+          ]
+        },
+        {
+          "title": "Pasalubong allocation",
+          "cost": [
+            0,
+            0
+          ],
+          "costPHP": [
+            1000,
+            1000
+          ]
+        }
+      ],
+      "notice": "Tour is planned, not booked. Meeting point, official call time, return stop and Shifen/Jiufen timing are unconfirmed. Shifen Waterfall is not a confirmed stop.",
+      "budgetNote": "Includes the quoted ₱3,762 Klook booking and ₱1,000 shopping allocation, converted to TWD equivalents for totals. Dinner uses the NT$480 midpoint; its source range is NT$360–600. The source used ₱1.25/TWD; app totals use the displayed planning rate.",
+      "extra": {
+        "title": "Pre-trip confirmations",
+        "blocks": [
+          {
+            "kind": "bullet",
+            "text": "[ ] Exact Nov 9 Tiaoshi package and 2-adult total still available at ₱3,762."
+          },
+          {
+            "kind": "bullet",
+            "text": "[ ] Exact meeting point / address and operator's official call time."
+          },
+          {
+            "kind": "bullet",
+            "text": "[ ] Bus/guide identification and emergency contact procedure."
+          },
+          {
+            "kind": "bullet",
+            "text": "[ ] Exact pickup and return drop-off points."
+          },
+          {
+            "kind": "bullet",
+            "text": "[ ] Actual tour completion time."
+          },
+          {
+            "kind": "bullet",
+            "text": "[ ] Remaining stop sequence and schedules for Shifen and Jiufen."
+          },
+          {
+            "kind": "bullet",
+            "text": "[ ] Whether Shifen Waterfall is omitted or included in this specific variant."
+          },
+          {
+            "kind": "bullet",
+            "text": "[ ] Confirm separate payment for Yehliu entrance and sky lantern."
+          },
+          {
+            "kind": "bullet",
+            "text": "[ ] Tour cancellation terms and late-arrival rules."
+          },
+          {
+            "kind": "bullet",
+            "text": "[ ] Sushi Express Guilin branch availability, location and last-order time."
+          },
+          {
+            "kind": "bullet",
+            "text": "[ ] Carrefour Guilin supermarket name, hours and access."
+          },
+          {
+            "kind": "bullet",
+            "text": "[ ] Hotel name/address against booking confirmation."
+          }
+        ]
+      }
+    },
+    {
+      "date": "2026-11-10",
+      "label": "Day 4",
+      "title": "More memories ahead",
+      "subtitle": "Taiwan · itinerary coming soon",
+      "activities": []
+    },
+    {
+      "date": "2026-11-11",
+      "label": "Day 5",
+      "title": "Until next time",
+      "subtitle": "11:00 AM return flight",
+      "activities": []
+    }
+  ]
+}

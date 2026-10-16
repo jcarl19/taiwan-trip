@@ -1,0 +1,83 @@
+// Logic and offline checks; these do not replace visual browser QA.
+const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
+const root=path.resolve(__dirname,'..'),data=JSON.parse(fs.readFileSync(path.join(root,'data/itinerary.json'),'utf8'));
+const source=fs.readFileSync(path.join(root,'app.js'),'utf8');
+async function appAt(now,savedRaw){
+  const elements=new Map(),storage=new Map();
+  if(savedRaw)storage.set('taiwan-together-v1',savedRaw);
+  const el=s=>{if(!elements.has(s))elements.set(s,{innerHTML:'',textContent:'',dataset:{},classList:{add(){},remove(){}},handlers:{},setAttribute(){},addEventListener(type,fn){this.handlers[type]=fn;}});return elements.get(s);};
+  class Clock extends Date {constructor(...args){super(...(args.length?args:[now]));}}
+  const context={Date:Clock,Intl,console,URL,crypto:require('node:crypto').webcrypto,setTimeout:()=>0,clearTimeout(){},location:{hash:''},history:{replaceState(_,__,hash){context.location.hash=hash;}},document:{documentElement:{dataset:{}},title:'',querySelector:el,querySelectorAll:()=>[]},localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},fetch:async url=>({ok:true,json:async()=>url.endsWith('photos.json')?JSON.parse(fs.readFileSync(path.join(root,'data/photos.json'),'utf8')):structuredClone(data)}),navigator:{},window:{addEventListener(){},scrollTo(){}}};
+  vm.createContext(context);
+  await vm.runInContext(`(async()=>{${source}\nglobalThis.testApi={money,cost,total,tripTotal,activityCard,daily,summary,expenses,checklist,saveChecklistItem,render,state,get day(){return dayIndex},set day(v){dayIndex=v},get filter(){return filter}};})()`,context);
+  return {context,api:context.testApi,elements,storage};
+}
+async function testApp(){
+  const before=await appAt('2026-10-12T06:00:00Z');
+  assert.equal(before.context.location.hash,'#summary');
+  const during=await appAt('2026-11-06T17:00:00Z');
+  assert.equal(during.context.location.hash,'#daily');assert.equal(during.api.day,1,'Taiwan date must select Nov 7');
+  const after=await appAt('2026-11-12T00:00:00Z');assert.equal(after.context.location.hash,'#summary');
+  const a=during.api;
+  assert.equal(data.days[0].activities.length,13);assert.equal(data.days[1].activities.length,23);
+  assert.deepEqual(Array.from(a.total(data.days[1])),[2200,3360]);
+  assert.equal(a.total(data.days[0]),null,'Missing costs are not zero');
+  a.state.lunch='backup';assert.deepEqual(Array.from(a.total(data.days[1])),[2300,3510]);
+  assert.ok(a.activityCard(data.days[1].activities[13]).includes('destination=Chun%20Shui%20Tang'));
+  assert.equal(a.money([400,650],'PHP',true),'₱394–640');
+  assert.equal((a.daily().match(/data-activity=/g)||[]).length,23);
+  for(const [id,file] of [['07-13','cks'],['07-18','rainbow'],['07-19','red-house'],['07-20','ximending'],['07-21','eslite'],['07-22','donki']])assert.ok(a.activityCard(data.days[1].activities.find(x=>x.id===id)).includes(`./assets/${file}.jpg`));
+  assert.ok(!a.daily().includes(' open>'),'Activities begin collapsed');
+  const completed=data.days[1].activities[0].id;
+  during.elements.get('#main').handlers.click({target:{closest:s=>s==='[data-complete]'?{dataset:{complete:completed}}:null}});
+  assert.equal(a.state.completed[completed],true);
+  assert.ok(a.daily().includes('Undo completion'));assert.ok(a.daily().includes('activity completed'));
+  assert.ok(during.storage.get('taiwan-together-v1').includes(completed));
+  during.elements.get('#main').handlers.change({target:{id:'filter',value:'completed'}});
+  assert.equal((a.daily().match(/data-activity=/g)||[]).length,1);
+  during.elements.get('#main').handlers.click({target:{closest:s=>s==='[data-complete]'?{dataset:{complete:completed}}:null}});
+  assert.equal(a.state.completed[completed],false);
+  assert.ok(a.daily().includes('No activities in this filter'));
+  const summary=a.summary();assert.ok(!summary.includes('MRT to Longshan'),'Summary excludes transport detail');assert.equal((summary.match(/class="summary-day"/g)||[]).length,6);
+  assert.ok(a.expenses().includes('partial gross planning total'));
+  assert.equal(data.days[2].activities.length,18);assert.equal(data.days[3].activities.length,8);
+  assert.deepEqual(Array.from(a.total(data.days[2])),[1300,2090],'Nov 8 total is computed from individual rows, not the inconsistent source total');
+  const nov9=a.total(data.days[3]);assert.equal(a.money(nov9,'PHP'),'₱7,360');
+  assert.ok(Math.abs(nov9[0]*data.rate-(1320*1.968+3762+1000))<0.001,'PHP booking and shopping counted once at native amounts');
+  const tour=a.activityCard(data.days[3].activities[3]);assert.equal((tour.match(/class="tour-stop"/g)||[]).length,4);assert.ok(tour.includes('assets/jiufen.jpg'));assert.ok(tour.includes('query=Shifen+Old+Street'));
+  const day8=await appAt('2026-11-08T00:00:00Z');assert.equal(day8.api.day,2);assert.ok(day8.api.daily().includes('Bad-weather backup'));
+  const day9=await appAt('2026-11-09T00:00:00Z');assert.equal(day9.api.day,3);assert.ok(day9.api.daily().includes('not booked'));
+  assert.ok(a.summary().includes('Tiaoshi Coast'));assert.ok(a.expenses().includes('Klook tour · 2 adults'));
+  const starterCount=a.state.checklist.length;assert.ok(starterCount>10);
+  assert.equal(a.saveChecklistItem('new','   ','todo'),false,'Blank items rejected');
+  assert.equal(a.saveChecklistItem('new','Bring sunglasses','bring'),true);
+  const custom=a.state.checklist.at(-1);assert.equal(custom.category,'bring');
+  assert.equal(a.saveChecklistItem(custom.id,'Book airport transfer','todo'),true);
+  assert.equal(custom.text,'Book airport transfer');assert.equal(custom.category,'todo');
+  during.elements.get('#main').handlers.change({target:{dataset:{checklistCheck:custom.id},checked:true,closest:()=>({classList:{toggle(){}}})}});
+  assert.equal(custom.done,true);
+  const reloaded=await appAt('2026-10-12T06:00:00Z',during.storage.get('taiwan-together-v1'));
+  assert.ok(reloaded.api.state.checklist.find(i=>i.id===custom.id).done,'Checklist survives reload');
+  during.elements.get('#main').handlers.click({target:{closest:s=>s==='[data-checklist-remove]'?{dataset:{checklistRemove:custom.id}}:null}});
+  assert.equal(a.state.checklist.length,starterCount);
+  const empty=await appAt('2026-10-12T06:00:00Z',JSON.stringify({checklist:[]}));assert.equal(empty.api.state.checklist.length,0,'Deleted starter items do not come back');
+  assert.ok(!empty.api.checklist().includes('type="checkbox"'));
+  during.context.location.hash='#checklist';a.render();assert.ok(during.elements.get('#main').innerHTML.includes('Ready for Taiwan?'));assert.ok(!during.elements.get('.bottom-nav').innerHTML.includes('href="#checklist"'));
+  console.log('PASS: checklist starter items, add/edit/move/check/delete, reload persistence, empty list and header-only navigation');
+  console.log('PASS: date selection, import counts, both budgets, maps choice, currency conversion, completion/undo, persistence, filters and summary');
+}
+async function testOffline(){
+  const handlers={},store=new Map();let online=true;
+  const caches={async open(name){if(!store.has(name))store.set(name,new Map());const m=store.get(name);return {async put(key,response){m.set(String(key),response)},async addAll(urls){for(const url of urls){const response=await fetchFile(url);if(!response.ok)throw Error('Missing asset '+url);m.set(url,response)}},async match(key){return m.get(String(key))}}},async keys(){return [...store.keys()]},async delete(name){store.delete(name)},async match(request){const key=typeof request==='string'?request:request.url;for(const m of store.values())if(m.has(key))return m.get(key)}};
+  async function fetchFile(input){if(!online)throw Error('Offline');const url=typeof input==='string'?input:input.url;let p=decodeURIComponent(new URL(url).pathname);if(p.endsWith('/'))p+='index.html';const file=path.join(root,p);return fs.existsSync(file)?new Response(fs.readFileSync(file),{status:200}):new Response('',{status:404});}
+  const ctx={URL,Response,caches,fetch:fetchFile,self:{location:{href:'http://localhost:5173/sw.js'},addEventListener:(type,fn)=>handlers[type]=fn,skipWaiting:async()=>{},clients:{claim:async()=>{}}}};
+  vm.createContext(ctx);vm.runInContext(fs.readFileSync(path.join(root,'sw.js'),'utf8'),ctx);
+  let pending;handlers.install({waitUntil:p=>pending=p});await pending;
+  let reply;handlers.message({data:{type:'DOWNLOAD_TRIP'},ports:[{postMessage:m=>reply=m}],waitUntil:p=>pending=p});await pending;assert.equal(reply.ok,true);
+  online=false;
+  for(const asset of ['index.html','app.js','data/itinerary.json','data/photos.json',...Object.values(JSON.parse(fs.readFileSync(path.join(root,'data/photos.json'),'utf8'))).map(p=>p.src.replace('./',''))]){
+    let response;handlers.fetch({request:{method:'GET',url:'http://localhost:5173/'+asset,mode:'cors'},respondWith:p=>response=p});assert.equal((await response).status,200);
+  }
+  console.log('PASS: all PWA assets exist, download succeeds, guide/data/photo resolve from cache offline');
+}
+(async()=>{await testApp();await testOffline();})().catch(error=>{console.error(error);process.exitCode=1;});

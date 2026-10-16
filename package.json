@@ -1,0 +1,1 @@
+{"name":"taiwan-together","version":"0.1.0","private":true,"scripts":{"dev":"node server.cjs","check":"node --check app.js && node --check sw.js && node --check server.cjs"}}

@@ -1,0 +1,189 @@
+{
+  "cks": {
+    "src": "./assets/cks.jpg",
+    "alt": "Chiang Kai-shek Memorial Hall",
+    "width": 1100,
+    "height": 733,
+    "author": "AngMoKio",
+    "source": "https://commons.wikimedia.org/wiki/File:Chiang_Kai-shek_memorial_amk.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "changes": "Resized and compressed"
+  },
+  "red-house": {
+    "src": "./assets/red-house.jpg",
+    "alt": "The Red House, Ximending",
+    "width": 929,
+    "height": 1100,
+    "author": "Daniel P. C. Shen",
+    "source": "https://commons.wikimedia.org/wiki/File:%E8%A5%BF%E9%96%80%E7%B4%85%E6%A8%9301.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "changes": "Resized and compressed"
+  },
+  "rainbow": {
+    "src": "./assets/rainbow.jpg",
+    "alt": "Rainbow Six Crossing, Ximending",
+    "width": 1100,
+    "height": 733,
+    "author": "Volksabstimmung",
+    "source": "https://commons.wikimedia.org/wiki/File:Ximending_rainbow_crossing_201910.jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "changes": "Resized and compressed"
+  },
+  "donki": {
+    "src": "./assets/donki.jpg",
+    "alt": "DON DON DONKI Ximen storefront",
+    "width": 1100,
+    "height": 729,
+    "author": "玄史生",
+    "source": "https://commons.wikimedia.org/wiki/File:2021-01-23_DON_DON_DONKI_Ximen_Store.jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "changes": "Resized and compressed"
+  },
+  "eslite": {
+    "src": "./assets/eslite.jpg",
+    "alt": "New World Building, home to Eslite Spectrum Ximen (2008 photo)",
+    "width": 1100,
+    "height": 733,
+    "author": "slayer",
+    "source": "https://commons.wikimedia.org/wiki/File:New_World_Building_and_Ximen_Station_20080404.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "changes": "Resized and compressed"
+  },
+  "airport": {
+    "src": "./assets/airport.jpg",
+    "alt": "Taoyuan International Airport Terminal 1",
+    "width": 825,
+    "height": 1100,
+    "author": "Heeheemalu",
+    "source": "https://commons.wikimedia.org/wiki/File:Interior_of_Taoyuan_International_Airport_Terminal_1_20220624.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "changes": "Resized and compressed"
+  },
+  "ximending": {
+    "src": "./assets/ximending.jpg",
+    "alt": "Food stall in Ximending",
+    "width": 1100,
+    "height": 785,
+    "author": "CEphoto, Uwe Aranas",
+    "source": "https://commons.wikimedia.org/wiki/File:Taipei_Taiwan_Ximending-Night-Market-05.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "changes": "Resized and compressed"
+  },
+  "longshan": {
+    "src": "./assets/longshan.jpg",
+    "alt": "Longshan Temple main hall",
+    "width": 1024,
+    "height": 699,
+    "author": "Bernard Gagnon",
+    "source": "https://commons.wikimedia.org/wiki/File:Longshan_Temple,_Taipei_01.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "changes": "Resized and compressed"
+  },
+  "qingtiangang": {
+    "src": "./assets/qingtiangang.jpg",
+    "alt": "Qingtiangang Grassland",
+    "width": 732,
+    "height": 1100,
+    "author": "MarcChu",
+    "source": "https://commons.wikimedia.org/wiki/File:Qingtiangang_Grassland,_Taipei_City,_Taiwan.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "changes": "Resized and compressed"
+  },
+  "shilin": {
+    "src": "./assets/shilin.jpg",
+    "alt": "Shilin Night Market, Dadong Road",
+    "width": 619,
+    "height": 1100,
+    "author": "Ganmatthew",
+    "source": "https://commons.wikimedia.org/wiki/File:Shilin_Night_Market_Dadong_Road.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "changes": "Resized and compressed"
+  },
+  "tianhou": {
+    "src": "./assets/tianhou.jpg",
+    "alt": "Taipei Tianhou Temple exterior",
+    "width": 825,
+    "height": 1100,
+    "author": "Chainwit.",
+    "source": "https://commons.wikimedia.org/wiki/File:Chengdu_Rd,_Taipei_-_Tianhou_Temple_-_exterior_(2025)_-_img_01.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "changes": "Resized and compressed"
+  },
+  "nishi": {
+    "src": "./assets/nishi.jpg",
+    "alt": "Nishi Honganji Square bell tower",
+    "width": 850,
+    "height": 1100,
+    "author": "CEphoto, Uwe Aranas",
+    "source": "https://commons.wikimedia.org/wiki/File:Taipei_Taiwan_Nishi-Honganji-Square-01.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "changes": "Resized and compressed"
+  },
+  "cixian": {
+    "src": "./assets/cixian.jpg",
+    "alt": "Shilin Cixian Temple",
+    "width": 1100,
+    "height": 822,
+    "author": "lienyuan lee",
+    "source": "https://commons.wikimedia.org/wiki/File:Shilin_Cixian_Temple_20120108.jpg",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "changes": "Resized and compressed"
+  },
+  "jiufen": {
+    "src": "./assets/jiufen.jpg",
+    "alt": "Jiufen lantern streets at night",
+    "width": 1100,
+    "height": 825,
+    "author": "Sunkenbean",
+    "source": "https://commons.wikimedia.org/wiki/File:Jiufen_at_night_lantern_glow.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "changes": "Resized and compressed"
+  },
+  "yehliu": {
+    "src": "./assets/yehliu.jpg",
+    "alt": "Queen’s Head at Yehliu Geopark",
+    "width": 825,
+    "height": 1100,
+    "author": "David Monniaux",
+    "source": "https://commons.wikimedia.org/wiki/File:Queen%27s_Head,_Yehliu_20060405.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "changes": "Resized and compressed"
+  },
+  "shifen": {
+    "src": "./assets/shifen.jpg",
+    "alt": "Shifen Old Street",
+    "width": 1100,
+    "height": 825,
+    "author": "Chainwit.",
+    "source": "https://commons.wikimedia.org/wiki/File:New_Taipei_-_Shifen_Old_Street_%E5%8D%81%E5%88%86%E8%80%81%E8%A1%97_(2025)_-_IMG_11.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "changes": "Resized and compressed"
+  },
+  "tiaoshi": {
+    "src": "./assets/tiaoshi.jpg",
+    "alt": "Tiaoshi coastal bus stop (2012 photo)",
+    "width": 1100,
+    "height": 825,
+    "author": "rheins",
+    "source": "https://commons.wikimedia.org/wiki/File:%E8%B7%B3%E7%9F%B3_-_Tiaoshi_Stop_-_2012.02_-_panoramio.jpg",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "changes": "Resized and compressed"
+  }
+}
