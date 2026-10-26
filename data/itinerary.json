@@ -2388,19 +2388,15 @@
             },
             {
               "kind": "paragraph",
-              "text": "**Editable provisional shopping allocation:** **₱1,000 for two**, not a confirmed spend."
+              "text": "**Carry-on note:** Cebu Pacific hand-carry allowance planned at **10 kg per traveler**; check current ticket allowance and liquid restrictions. Bring reusable bags and keep receipts."
             },
             {
               "kind": "paragraph",
-              "text": "**Carry-on note:** Cebu Pacific hand-carry allowance planned at **10 kg per traveler**; check current ticket allowance and liquid restrictions. Bring reusable bags and keep receipts."
+              "text": "Shopping estimates are managed in the To Buy list for November 9."
             }
           ],
           "summary": true,
-          "category": "explore",
-          "costPHP": [
-            1000,
-            1000
-          ]
+          "category": "explore"
         },
         {
           "id": "09-08",
@@ -2483,21 +2479,10 @@
             480,
             480
           ]
-        },
-        {
-          "title": "Pasalubong allocation",
-          "cost": [
-            0,
-            0
-          ],
-          "costPHP": [
-            1000,
-            1000
-          ]
         }
       ],
       "notice": "Tour is planned, not booked. Meeting point, official call time, return stop and Shifen/Jiufen timing are unconfirmed. Shifen Waterfall is not a confirmed stop.",
-      "budgetNote": "Includes the quoted ₱3,762 Klook booking and ₱1,000 shopping allocation, converted to TWD equivalents for totals. Dinner uses the NT$480 midpoint; its source range is NT$360–600. The source used ₱1.25/TWD; app totals use the displayed planning rate.",
+      "budgetNote": "Includes the quoted ₱3,762 Klook booking, converted to a TWD equivalent for totals. No fixed pasalubong allowance; shopping estimates come from the To Buy list. Dinner uses the NT$480 midpoint; its source range is NT$360–600. The source used ₱1.25/TWD; app totals use the displayed planning rate.",
       "extra": {
         "title": "Pre-trip confirmations",
         "blocks": [

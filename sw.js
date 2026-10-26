@@ -1,4 +1,4 @@
-const VERSION='v8';
+const VERSION='v9';
 const CORE='taiwan-core-'+VERSION;
 const OFFLINE='taiwan-offline-'+VERSION;
 const ROOT=new URL('./',self.location.href);

@@ -42,8 +42,10 @@ async function testApp(){
   assert.ok(a.expenses().includes('partial gross planning total'));
   assert.equal(data.days[2].activities.length,18);assert.equal(data.days[3].activities.length,8);
   assert.deepEqual(Array.from(a.total(data.days[2])),[1300,2090],'Nov 8 total is computed from individual rows, not the inconsistent source total');
-  const nov9=a.total(data.days[3]);assert.equal(a.money(nov9,'PHP'),'₱7,360');
-  assert.ok(Math.abs(nov9[0]*data.rate-(1320*1.968+3762+1000))<0.001,'PHP booking and shopping counted once at native amounts');
+  const nov9=a.total(data.days[3]);assert.equal(a.money(nov9,'PHP'),'₱6,360');
+  assert.ok(Math.abs(nov9[0]*data.rate-(1320*1.968+3762))<0.001,'Tour included without a fixed shopping allowance');
+  assert.ok(!data.days[3].activities[6].costPHP);assert.ok(!data.days[3].budgetItems.some(item=>item.title==='Pasalubong allocation'));
+  assert.ok(!a.activityCard(data.days[3].activities[6]).includes('₱1,000'));
   const tour=a.activityCard(data.days[3].activities[3]);assert.equal((tour.match(/class="tour-stop"/g)||[]).length,4);assert.ok(tour.includes('assets/jiufen.jpg'));assert.ok(tour.includes('query=Shifen+Old+Street'));
   const day8=await appAt('2026-11-08T00:00:00Z');assert.equal(day8.api.day,2);assert.ok(day8.api.daily().includes('Bad-weather backup'));
   const day9=await appAt('2026-11-09T00:00:00Z');assert.equal(day9.api.day,3);assert.ok(day9.api.daily().includes('not booked'));
@@ -156,7 +158,10 @@ async function testApp(){
   assert.ok(shop.expenses().includes('To Buy · Zero price sample'));
   shop.buyDay=0;assert.ok(shop.buyScreen().includes('id="prev-buy-day" aria-label="Previous shopping day" disabled'));
   shop.buyDay=5;assert.ok(shop.buyScreen().includes('id="next-buy-day" aria-label="Next shopping day" disabled'));
-  shop.buyDay=3;assert.ok(shop.buyScreen().includes('already includes a ₱1,000'));
+  shop.buyDay=3;assert.ok(!shop.buyScreen().includes('already includes a ₱1,000'));
+  const nov9BeforeBuy=shop.total(data.days[3])[0];
+  shop.saveBuyItem('new','2026-11-09','Pasalubong gifts',1000,'PHP');
+  assert.ok(Math.abs((shop.total(data.days[3])[0]-nov9BeforeBuy)*data.rate-1000)<1e-8,'Nov 9 shopping comes only from To Buy and is counted once');
   console.log('PASS: shopping dates/navigation, native PHP/TWD prices, CRUD, persistence and day/trip expense integration');
   console.log('PASS: checklist starter items, add/edit/move/check/delete, reload persistence, empty list and header-only navigation');
   console.log('PASS: date selection, import counts, both budgets, maps choice, currency conversion, completion/undo, persistence, filters and summary');
