@@ -3354,9 +3354,790 @@
     {
       "date": "2026-11-11",
       "label": "Day 5",
-      "title": "Until next time",
-      "subtitle": "11:00 AM return flight",
-      "activities": []
+      "title": "Until next time, Taiwan",
+      "subtitle": "5J 313 · TPE Terminal 1 → MNL Terminal 3 → Taytay",
+      "activities": [
+        {
+          "id": "11-01",
+          "time": "4:45 AM",
+          "title": "Wake Up & Final Packing",
+          "location": "Airline Inn Taipei Ximen.",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": null,
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Location:** Airline Inn Taipei Ximen. **Added cost:** NT$0 / ₱0."
+            },
+            {
+              "kind": "ordered",
+              "text": "Wake up, freshen up and change into travel clothes."
+            },
+            {
+              "kind": "ordered",
+              "text": "Check passports, flight confirmation, boarding passes if available, phones and payment cards."
+            },
+            {
+              "kind": "ordered",
+              "text": "Weigh carry-on and checked luggage; the checked baggage add-on is still to be verified."
+            },
+            {
+              "kind": "ordered",
+              "text": "Check drawers, bathroom, chargers and power outlets."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** Pack most items the night before."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**If delayed:** Prioritize essentials and immediate checkout."
+            }
+          ],
+          "summary": false,
+          "category": "stay"
+        },
+        {
+          "id": "11-02",
+          "time": "5:10 AM",
+          "title": "Hotel Checkout",
+          "location": "Airline Inn Taipei Ximen, No. 59, Section 1, Zhonghua Road.",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": null,
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Location:** Airline Inn Taipei Ximen, No. 59, Section 1, Zhonghua Road. **Added cost:** NT$0 / ₱0, assuming no incidental hotel charges."
+            },
+            {
+              "kind": "ordered",
+              "text": "Go to reception with all luggage."
+            },
+            {
+              "kind": "ordered",
+              "text": "Return room keycards and settle any remaining charges."
+            },
+            {
+              "kind": "ordered",
+              "text": "Double-check that nothing was left in the room."
+            },
+            {
+              "kind": "ordered",
+              "text": "Leave for the Taoyuan Airport MRT A1 station."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** The hotel address in Chinese is 台北市中正區中華路一段59號."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**If delayed:** Ask reception for the quickest luggage-friendly street-level route to A1."
+            }
+          ],
+          "summary": true,
+          "category": "stay"
+        },
+        {
+          "id": "11-03",
+          "time": "5:20–5:45 AM",
+          "title": "Walk to Taipei Main Station Airport MRT A1",
+          "location": "Hotel → Taoyuan Airport MRT Taipei Main Station (A1).",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&origin=Airline+Inn+Taipei+Ximen&destination=Taoyuan+Airport+MRT+Taipei+Main+Station&travelmode=walking",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Route:** Hotel → **Taoyuan Airport MRT Taipei Main Station (A1)**. **Added cost:** NT$0 / ₱0."
+            },
+            {
+              "kind": "ordered",
+              "text": "Follow walking navigation to the **Airport MRT A1** entrance, not merely to the city MRT or railway station."
+            },
+            {
+              "kind": "ordered",
+              "text": "Allow roughly 25–35 minutes, possibly more if elevators or entrances take extra time."
+            },
+            {
+              "kind": "ordered",
+              "text": "Follow **Airport MRT / Taoyuan Metro** signs."
+            },
+            {
+              "kind": "ordered",
+              "text": "Use elevators as needed for luggage."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** Aim for the platform by 5:45 AM."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**If delayed:** Later Express trains may reduce your airport buffer; prioritize getting to A1 without stops."
+            }
+          ],
+          "summary": false,
+          "category": "transport"
+        },
+        {
+          "id": "11-04",
+          "time": "5:45–6:00 AM",
+          "title": "Enter Airport MRT A1",
+          "location": "A1 Taipei Main Station (Taoyuan Metro).",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": null,
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Location:** A1 Taipei Main Station (Taoyuan Metro). **Added cost:** NT$0 at this step (fare is counted in Activity 5)."
+            },
+            {
+              "kind": "ordered",
+              "text": "Locate Taoyuan Airport MRT ticket gates."
+            },
+            {
+              "kind": "ordered",
+              "text": "Make sure each EasyCard has enough balance for the **estimated NT$160 per-person** fare."
+            },
+            {
+              "kind": "ordered",
+              "text": "Tap in and follow signs to the airport-bound **Express** platform."
+            },
+            {
+              "kind": "ordered",
+              "text": "Confirm the purple **Express Train** bound for Taoyuan International Airport."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** Purple is Express; blue is Commuter."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**If delayed:** The previously planned backup departures were 6:15 AM and 6:30 AM. Verify the day-of-service timetable before relying on them."
+            }
+          ],
+          "summary": false,
+          "category": "transport"
+        },
+        {
+          "id": "11-05",
+          "time": "6:00–6:35 AM",
+          "title": "Airport MRT Express to Terminal 1",
+          "location": "A1 Taipei Main Station → A3 New Taipei Industrial Park → A8 Chang Gung Memorial Hospital → A12 Airport Terminal 1.",
+          "cost": [
+            320,
+            320
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&origin=Taoyuan+Airport+MRT+Taipei+Main+Station&destination=Taoyuan+Airport+Terminal+1&travelmode=transit",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Route:** **A1 Taipei Main Station → A3 New Taipei Industrial Park → A8 Chang Gung Memorial Hospital → A12 Airport Terminal 1**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Board the **6:00 AM targeted Express service**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Place large bags in the luggage racks."
+            },
+            {
+              "kind": "ordered",
+              "text": "Remain onboard until **A12 / Airport Terminal 1**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Exit the station and follow **Terminal 1 Departures** signs."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Planned fare:** NT$160 per person ≈ ₱315; **NT$320 for 2 ≈ ₱630**."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Travel time:** ~35 minutes, schedule dependent."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** Recheck the official Metro timetable nearer November 11; don't treat a projected time as a real-time train confirmation."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**If delayed:** Take the next airport-bound Express and go directly to check-in on arrival."
+            }
+          ],
+          "summary": true,
+          "category": "transport",
+          "photoKey": "airport-mrt"
+        },
+        {
+          "id": "11-06",
+          "time": "6:35–6:50 AM",
+          "title": "Airport Arrival & Departures",
+          "location": "Taoyuan International Airport Terminal 1.",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": null,
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Location:** Taoyuan International Airport Terminal 1. **Added cost:** NT$0 / ₱0."
+            },
+            {
+              "kind": "ordered",
+              "text": "Exit Taoyuan Airport MRT at **A12**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Follow signs to **Terminal 1 departure check-in**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Locate **Cebu Pacific 5J 313** on the airport flight screens."
+            },
+            {
+              "kind": "ordered",
+              "text": "Find the assigned check-in/baggage-drop counters."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** Counters and gates are assigned operationally; check the screens."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**If delayed:** Skip landside food and proceed straight to the airline counter."
+            }
+          ],
+          "summary": true,
+          "category": "transport",
+          "photoKey": "airport"
+        },
+        {
+          "id": "11-07",
+          "time": "6:50–7:30 AM",
+          "title": "Check-In & Baggage Drop",
+          "location": "",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": null,
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Airline:** Cebu Pacific, flight 5J 313. **Added cost:** NT$0 / ₱0 (not including any baggage fee or incidental charge)."
+            },
+            {
+              "kind": "ordered",
+              "text": "Present passports and boarding passes or booking details if requested."
+            },
+            {
+              "kind": "ordered",
+              "text": "Check in the bag if the planned **20 kg checked baggage allowance** has been purchased."
+            },
+            {
+              "kind": "ordered",
+              "text": "Confirm checked-bag tags show **MNL**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Check the gate and airline-issued boarding time."
+            },
+            {
+              "kind": "ordered",
+              "text": "Continue to security and outbound immigration."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** Confirm online check-in, baggage purchase and actual counter cutoff with Cebu Pacific before travel."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**If delayed:** Avoid any stops until baggage drop is complete."
+            }
+          ],
+          "summary": false,
+          "category": "explore"
+        },
+        {
+          "id": "11-08",
+          "time": "7:30–8:15 AM",
+          "title": "Security & Immigration",
+          "location": "T1 International Departures.",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": null,
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Location:** T1 International Departures. **Added cost:** NT$0 / ₱0."
+            },
+            {
+              "kind": "ordered",
+              "text": "Follow international departures directions."
+            },
+            {
+              "kind": "ordered",
+              "text": "Keep passport and boarding pass available."
+            },
+            {
+              "kind": "ordered",
+              "text": "Complete departure security following current instructions for liquids and electronic devices."
+            },
+            {
+              "kind": "ordered",
+              "text": "Clear outbound immigration."
+            },
+            {
+              "kind": "ordered",
+              "text": "Check gate location again afterward."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** Queues can vary significantly."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**If delayed:** Head to the gate first; make breakfast takeaway only if time permits."
+            }
+          ],
+          "summary": false,
+          "category": "explore"
+        },
+        {
+          "id": "11-09",
+          "time": "8:15–8:45 AM",
+          "title": "Breakfast",
+          "location": "",
+          "cost": [
+            140,
+            700
+          ],
+          "maps": null,
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Two options are retained — no single venue finally chosen.**"
+            },
+            {
+              "kind": "heading",
+              "text": "Option 1 — hómee KITCHEN 好饗廚房-桃園國際機場店(第一航廈A區)"
+            },
+            {
+              "kind": "bullet",
+              "text": "**Location:** Taoyuan International Airport Terminal 1, **Concourse A / near Gate A4**, after security, based on the prior itinerary research."
+            },
+            {
+              "kind": "bullet",
+              "text": "**Previously listed opening:** about **6:00 AM**; verify November 11 opening hours."
+            },
+            {
+              "kind": "bullet",
+              "text": "**Estimated breakfast budget for 2:** **NT$400–700 / ~₱787–1,378**."
+            },
+            {
+              "kind": "bullet",
+              "text": "**Food preference:** Choose lighter rice/soup meals, clear broth and lower-fat options where offered."
+            },
+            {
+              "kind": "bullet",
+              "text": "**Access caveat:** If the assigned gate is far from Concourse A or clearance is delayed, don't make a long detour for this restaurant."
+            },
+            {
+              "kind": "heading",
+              "text": "Option 2 — 7-Eleven"
+            },
+            {
+              "kind": "bullet",
+              "text": "**Location:** An **accessible Taoyuan Terminal 1 branch**, depending on whether you are before or after security."
+            },
+            {
+              "kind": "bullet",
+              "text": "**Previously discussed B1 convenience-store option:** Landside/before security; **do not leave airside solely to visit it** after immigration."
+            },
+            {
+              "kind": "bullet",
+              "text": "**Estimated breakfast budget for 2:** **NT$140–260 / ~₱276–512**."
+            },
+            {
+              "kind": "bullet",
+              "text": "**Choices:** Rice balls, sandwiches, fruit or soy milk if stocked."
+            },
+            {
+              "kind": "bullet",
+              "text": "**Access caveat:** Check actual branch opening and access; a landside 7-Eleven is more practical **before** security, not afterward."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Breakfast procedure:**"
+            },
+            {
+              "kind": "ordered",
+              "text": "Check your boarding gate, boarding time, and remaining free time."
+            },
+            {
+              "kind": "ordered",
+              "text": "Choose hómee KITCHEN if accessible and time allows, or 7-Eleven as a quick option from the correct side of security."
+            },
+            {
+              "kind": "ordered",
+              "text": "For gallstone-conscious eating, prefer small, less oily meals and avoid fried/creamy selections."
+            },
+            {
+              "kind": "ordered",
+              "text": "Finish with enough time to reach the gate."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** Breakfast timing is a goal, not a reason to risk boarding."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**If delayed:** Buy a quick snack at an accessible airside vendor or skip the sit-down meal."
+            }
+          ],
+          "summary": true,
+          "category": "food"
+        },
+        {
+          "id": "11-10",
+          "time": "8:45–9:30 AM",
+          "title": "Proceed to Boarding Gate",
+          "location": "Assigned Taoyuan T1 departure gate.",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": null,
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Location:** Assigned Taoyuan T1 departure gate. **Added cost:** NT$0 / ₱0."
+            },
+            {
+              "kind": "ordered",
+              "text": "Confirm your gate on airport screens."
+            },
+            {
+              "kind": "ordered",
+              "text": "Walk to the correct boarding area and find seats."
+            },
+            {
+              "kind": "ordered",
+              "text": "Keep passport and boarding pass ready."
+            },
+            {
+              "kind": "ordered",
+              "text": "Use the restroom and get water as allowed."
+            },
+            {
+              "kind": "ordered",
+              "text": "Follow the **actual** boarding announcement and cutoff."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** Gate and boarding-time specifics are not yet known. Never treat 9:30 AM as a verified gate-closure time."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**If delayed or gate changes:** Follow the current airport display immediately."
+            }
+          ],
+          "summary": false,
+          "category": "explore",
+          "photoKey": "airport"
+        },
+        {
+          "id": "11-11",
+          "time": "10:20 AM–1:05 PM",
+          "title": "Flight to Manila",
+          "location": "Cebu Pacific 5J 313, TPE T1 → MNL T3.",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": null,
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Flight:** Cebu Pacific **5J 313**, TPE T1 → MNL T3. **Added cost:** NT$0 / ₱0 (flight already booked; air fare omitted from this day's operating budget)."
+            },
+            {
+              "kind": "ordered",
+              "text": "Board as called by the airline."
+            },
+            {
+              "kind": "ordered",
+              "text": "Keep passports and Philippine arrival documents, as applicable, accessible."
+            },
+            {
+              "kind": "ordered",
+              "text": "Arrive at **NAIA Terminal 3**, scheduled **1:05 PM**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Follow arrivals and immigration signs."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** Taiwan and Philippines share UTC+8, so no time-zone adjustment."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**If delayed:** Move arrival, lunch and Grab estimates accordingly."
+            }
+          ],
+          "summary": true,
+          "category": "transport"
+        },
+        {
+          "id": "11-12",
+          "time": "1:05–2:00 PM",
+          "title": "Philippine Arrival Formalities",
+          "location": "NAIA Terminal 3, Manila.",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": null,
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Location:** NAIA Terminal 3, Manila. **Added cost:** ₱0 assumed."
+            },
+            {
+              "kind": "ordered",
+              "text": "Disembark and follow signs for arrivals and immigration."
+            },
+            {
+              "kind": "ordered",
+              "text": "Complete any required arrival processes."
+            },
+            {
+              "kind": "ordered",
+              "text": "Collect checked baggage at the posted baggage carousel."
+            },
+            {
+              "kind": "ordered",
+              "text": "Pass customs as applicable."
+            },
+            {
+              "kind": "ordered",
+              "text": "Head toward the landside/public arrivals area."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** Processing and baggage-reclaim durations are unpredictable."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**If delayed:** Eat later; do not rush required airport procedures."
+            }
+          ],
+          "summary": false,
+          "category": "transport"
+        },
+        {
+          "id": "11-13",
+          "time": "2:00–3:00 PM",
+          "title": "Lunch (UNDECIDED)",
+          "location": "NAIA Terminal 3 public dining area, or another convenient location if plans change.",
+          "cost": null,
+          "maps": null,
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Location:** NAIA Terminal 3 public dining area, or another convenient location if plans change."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Restaurant:** **Undecided; do not assign Mary Grace, Kenny Rogers or any other venue as a final choice.**"
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Budget:** **TBD, excluded from fixed total**."
+            },
+            {
+              "kind": "ordered",
+              "text": "After clearing arrivals, check whether both travelers want a full meal or takeaway."
+            },
+            {
+              "kind": "ordered",
+              "text": "Choose an accessible restaurant at the airport when ready."
+            },
+            {
+              "kind": "ordered",
+              "text": "Keep luggage attended and secure while dining."
+            },
+            {
+              "kind": "ordered",
+              "text": "Factor in Grab pickup and traffic before deciding how long to stay."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** For a lighter meal, steamed, soup-based or non-fried dishes may be preferable when available."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**If delayed:** Grab something quick or eat closer to home."
+            }
+          ],
+          "summary": true,
+          "category": "food"
+        },
+        {
+          "id": "11-14",
+          "time": "3:00 PM Onward",
+          "title": "Grab Home",
+          "location": "NAIA Terminal 3 → Taytay, Rizal.",
+          "cost": null,
+          "maps": null,
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Route:** NAIA Terminal 3 → **Taytay, Rizal**."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Fare:** Variable and **not included** in fixed total."
+            },
+            {
+              "kind": "ordered",
+              "text": "Open Grab after lunch."
+            },
+            {
+              "kind": "ordered",
+              "text": "Enter your actual Taytay home address privately in the app."
+            },
+            {
+              "kind": "ordered",
+              "text": "Check the current designated Grab pickup point and quoted fare."
+            },
+            {
+              "kind": "ordered",
+              "text": "Match the driver and plate number before boarding."
+            },
+            {
+              "kind": "ordered",
+              "text": "Travel home with all luggage."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** Manila traffic can significantly change arrival time."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**If delayed:** Adjust your Grab pickup time once you have exited arrivals."
+            }
+          ],
+          "summary": true,
+          "category": "transport"
+        }
+      ],
+      "notice": "Flight 5J 313: 10:20 AM departure from TPE Terminal 1; 1:05 PM arrival at MNL Terminal 3. The 6:00 AM Airport MRT Express is a target to verify. Breakfast remains a choice; lunch is undecided. Confirm the planned 20 kg checked-baggage add-on.",
+      "budgetNote": "Known estimates only: NT$320 Airport MRT fare plus one breakfast option. Until a venue is selected, the range covers either option. Lunch (undecided), Grab home (variable), baggage add-on, airfare and optional purchases are excluded. No extra EasyCard top-up is counted.",
+      "extra": {
+        "title": "Departure reminders & unresolved items",
+        "blocks": [
+          {
+            "kind": "bullet",
+            "text": "**Do not schedule sightseeing or last-minute shopping on November 11 morning.** Complete pasalubong shopping and most packing on November 10."
+          },
+          {
+            "kind": "bullet",
+            "text": "Verify **flight 5J 313** details and actual terminal in the airline booking closer to departure."
+          },
+          {
+            "kind": "bullet",
+            "text": "Confirm that the **20 kg return checked baggage add-on** has been purchased and is on your booking."
+          },
+          {
+            "kind": "bullet",
+            "text": "Reconfirm the **first and 6:00 AM Airport MRT Express timetable** and allow for the correct A1 entrance and elevator access."
+          },
+          {
+            "kind": "bullet",
+            "text": "Make sure EasyCards have enough credit for **2 × NT$160** (assuming the quoted fare remains current)."
+          },
+          {
+            "kind": "bullet",
+            "text": "Check **hómee KITCHEN** hours and whether its Concourse A location is convenient for the assigned departure gate."
+          },
+          {
+            "kind": "bullet",
+            "text": "Check whether a **7-Eleven is available on the side of security where you plan to eat**; B1 landside cannot be visited once you have cleared outbound security without leaving the secure area."
+          },
+          {
+            "kind": "bullet",
+            "text": "**Breakfast options remain alternatives, not two meals:** hómee KITCHEN or 7-Eleven."
+          },
+          {
+            "kind": "bullet",
+            "text": "**Lunch intentionally remains undecided.** Pick a restaurant after arrival in Manila."
+          },
+          {
+            "kind": "bullet",
+            "text": "The 8:45–9:30 AM gate segment is a planning buffer; **actual boarding pass times and airline instructions take precedence**."
+          }
+        ]
+      }
     }
   ]
 }

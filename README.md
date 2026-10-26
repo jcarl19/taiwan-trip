@@ -6,11 +6,11 @@ Run `npm run dev`, then open http://localhost:5173. No dependencies or install s
 
 ## Content and behavior
 
-- Nov 6–10 imported from the provided final Markdown itineraries; Nov 11 explicitly pending. Nov 9 keeps one grouped day-tour card with four stop sections.
+- Nov 6–11 imported from the provided final Markdown itineraries. Nov 9 keeps one grouped day-tour card with four stop sections. Nov 11 has 14 departure-day activities and the final 5J 313 flight schedule: 10:20 AM TPE T1 to 1:05 PM MNL T3.
 - Current Taiwan date selects the Daily Guide during the trip; Trip Summary opens outside the trip. Hash links allow opening each screen directly.
 - Daily cards start collapsed and allow one expanded activity. Completed cards remain faded with checkmarks; All/Completed/Unfinished filter and undo supported.
 - Expenses permit multiple expanded day cards. Estimates use NT$1 = PHP1.968, for two people and PHP per person. Restaurant choice is exclusive and persisted.
-- Budget is partial: Nov 6 and Nov 11 costs have not been supplied. Nov 7 gross planning figures retain the source's overlapping EasyCard prepaid value and fares, clearly labeled. Nov 8 row amounts total NT$1,300–2,090. Native PHP quotes and allowances on Nov 9 are preserved; TWD equivalents use the app rate.
+- Budget is partial: Nov 6 costs and Nov 11 lunch, Grab and baggage add-on costs are excluded. Nov 7 gross planning figures retain the source's overlapping EasyCard prepaid value and fares, clearly labeled. Nov 8 row amounts total NT$1,300–2,090. Native PHP quotes and allowances on Nov 9 are preserved; TWD equivalents use the app rate. Nov 11 counts the NT$320 Airport MRT fare and one breakfast alternative: hómee KITCHEN totals NT$720–1,020; 7-Eleven totals NT$460–580. The default undecided breakfast shows the combined range NT$460–1,020. This is a range across alternatives, not two meals. The selection is saved locally and updates the guide, summary and expenses.
 - Theme, lunch choice and activity progress live in browser localStorage. No cross-device sync or backend.
 - Header checklist button opens a shared pre-flight list with To do / To bring starter items. Add, edit, move between sections, check/uncheck and delete are saved locally alongside activity progress. Each phone retains its own copy. Deletion has an inline confirmation; intentionally deleted starter items do not return on reload.
 - Download for offline use caches the local guide and available images. External Google Maps links still need internet or separate offline maps.
