@@ -9,7 +9,7 @@ async function appAt(now,savedRaw){
   class Clock extends Date {constructor(...args){super(...(args.length?args:[now]));}}
   const context={Date:Clock,Intl,console,URL,crypto:require('node:crypto').webcrypto,setTimeout:()=>0,clearTimeout(){},location:{hash:''},history:{replaceState(_,__,hash){context.location.hash=hash;}},document:{documentElement:{dataset:{}},title:'',querySelector:el,querySelectorAll:()=>[]},localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},fetch:async url=>({ok:true,json:async()=>url.endsWith('photos.json')?JSON.parse(fs.readFileSync(path.join(root,'data/photos.json'),'utf8')):structuredClone(data)}),navigator:{},window:{addEventListener(){},scrollTo(){}}};
   vm.createContext(context);
-  await vm.runInContext(`(async()=>{${source}\nglobalThis.testApi={money,cost,total,tripTotal,activityCard,daily,summary,expenses,checklist,saveChecklistItem,render,state,get day(){return dayIndex},set day(v){dayIndex=v},get filter(){return filter}};})()`,context);
+  await vm.runInContext(`(async()=>{${source}\nglobalThis.testApi={money,cost,total,tripTotal,activityCard,daily,summary,expenses,checklist,saveChecklistItem,saveChecklistOrder,render,state,get day(){return dayIndex},set day(v){dayIndex=v},get filter(){return filter}};})()`,context);
   return {context,api:context.testApi,elements,storage};
 }
 async function testApp(){
@@ -90,6 +90,33 @@ async function testApp(){
   const empty=await appAt('2026-10-12T06:00:00Z',JSON.stringify({checklist:[]}));assert.equal(empty.api.state.checklist.length,0,'Deleted starter items do not come back');
   assert.ok(!empty.api.checklist().includes('type="checkbox"'));
   during.context.location.hash='#checklist';a.render();assert.ok(during.elements.get('#main').innerHTML.includes('Ready for Taiwan?'));assert.ok(!during.elements.get('.bottom-nav').innerHTML.includes('href="#checklist"'));
+  const sorting=await appAt('2026-10-12T06:00:00Z');
+  const originalBring=Array.from(sorting.api.state.checklist.filter(i=>i.category==='bring'),i=>i.id);
+  const originalTodo=Array.from(sorting.api.state.checklist.filter(i=>i.category==='todo'),i=>i.id);
+  const first=sorting.api.state.checklist.find(i=>i.id===originalTodo[0]);first.done=true;
+  assert.equal(sorting.api.saveChecklistOrder('todo',[originalTodo[0],...originalTodo.slice(0,-1)]),false,'Duplicate IDs rejected');
+  assert.equal(sorting.api.saveChecklistOrder('todo',[originalBring[0],...originalTodo.slice(1)]),false,'Cross-section drops rejected');
+  const reversedTodo=originalTodo.slice().reverse();
+  assert.equal(sorting.api.saveChecklistOrder('todo',reversedTodo),true);
+  assert.deepEqual(Array.from(sorting.api.state.checklist.filter(i=>i.category==='todo'),i=>i.id),reversedTodo);
+  assert.deepEqual(Array.from(sorting.api.state.checklist.filter(i=>i.category==='bring'),i=>i.id),originalBring,'Other section unchanged');
+  assert.ok(sorting.api.state.checklist.find(i=>i.id===first.id).done,'Checkmarks preserved');
+  assert.equal(sorting.api.saveChecklistOrder('todo',reversedTodo),false,'No-op drag does not rewrite storage');
+  const configs=[];let destroyed=0;
+  const reversedBring=originalBring.slice().reverse();
+  const lists=['todo','bring'].map(category=>({dataset:{checklistCategory:category},querySelectorAll:()=> (category==='todo'?reversedTodo:reversedBring).map(id=>({dataset:{checklistId:id}}))}));
+  sorting.context.document.querySelectorAll=selector=>selector==='[data-checklist-category]'?lists:[];
+  sorting.context.window.Sortable={create:(list,config)=>{configs.push(config);return {destroy(){destroyed++;}};}};
+  sorting.context.location.hash='#checklist';sorting.api.render();assert.equal(configs.length,2);
+  assert.equal(configs[0].delayOnTouchOnly,true);assert.equal(configs[0].forceFallback,true);assert.equal(configs[0].preventOnFilter,false);
+  assert.ok(configs[0].filter.includes('input')&&configs[0].filter.includes('button'),'Form controls excluded from dragging');
+  configs[1].onStart();configs[1].onEnd();
+  assert.deepEqual(Array.from(sorting.api.state.checklist.filter(i=>i.category==='bring'),i=>i.id),reversedBring,'Drop callback saves visual order');
+  const reorderedReload=await appAt('2026-10-12T06:00:00Z',sorting.storage.get('taiwan-together-v1'));
+  assert.deepEqual(Array.from(reorderedReload.api.state.checklist.filter(i=>i.category==='todo'),i=>i.id),reversedTodo);
+  assert.deepEqual(Array.from(reorderedReload.api.state.checklist.filter(i=>i.category==='bring'),i=>i.id),reversedBring);
+  sorting.context.location.hash='#expenses';sorting.api.render();assert.equal(destroyed,2,'Drag instances cleaned up on navigation');
+  console.log('PASS: checklist drag wiring, independent list ordering, validation, reload persistence and cleanup');
   console.log('PASS: checklist starter items, add/edit/move/check/delete, reload persistence, empty list and header-only navigation');
   console.log('PASS: date selection, import counts, both budgets, maps choice, currency conversion, completion/undo, persistence, filters and summary');
 }

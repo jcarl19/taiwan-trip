@@ -28,6 +28,7 @@ const starterChecklist = [
 ].map(([category,text],i)=>({id:`starter-${i+1}`,category,text,done:false}));
 let state = { theme: saved.theme === 'light' ? 'light' : 'dark', completed: saved.completed || {}, lunch: saved.lunch === 'backup' ? 'backup' : 'primary', departureBreakfast: ['homee','seven'].includes(saved.departureBreakfast) ? saved.departureBreakfast : 'either', checklist: Array.isArray(saved.checklist) ? saved.checklist.filter(i=>i && typeof i.id==='string' && typeof i.text==='string' && ['todo','bring'].includes(i.category)).map(i=>({...i,done:!!i.done})) : starterChecklist };
 let editingChecklist = null, deletingChecklist = null;
+let checklistSortables = [], suppressChecklistClickUntil = 0;
 let data, photos = {}, dayIndex = 0, filter = 'all', openActivity = null, expandedExpenses = new Set(), downloading = false, installPrompt;
 const icons = {
   guide:'<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/>',
@@ -113,7 +114,7 @@ function checklistForm(item) {
   return `<form class="checklist-form" data-checklist-form="${item?esc(item.id):'new'}"><label>Item<input name="text" type="text" maxlength="180" value="${esc(item?.text || '')}" placeholder="e.g. Bring sunglasses" required></label><label>Section<select name="category"><option value="todo" ${item?.category!=='bring'?'selected':''}>To do</option><option value="bring" ${item?.category==='bring'?'selected':''}>To bring</option></select></label><div class="checklist-form-actions"><button type="submit" class="checklist-save">${item?'Save changes':'Add item'}</button>${item?'<button type="button" data-checklist-cancel>Cancel</button>':''}</div></form>`;
 }
 function checklist() {
-  return `<section class="page-intro"><span class="eyebrow">BEFORE WE TAKE OFF</span><h1>Ready for Taiwan?</h1><p>One checklist for both of us. Saved on this phone.</p></section>${['todo','bring'].map(category=>`<section class="checklist-section"><h2>${category==='todo'?'To do':'To bring'}</h2><ul class="checklist-items">${state.checklist.filter(item=>item.category===category).map(item=>`<li class="checklist-item ${item.done?'checked':''}">${editingChecklist===item.id?checklistForm(item):`<div class="checklist-row"><label><input type="checkbox" data-checklist-check="${esc(item.id)}" ${item.done?'checked':''}><span>${esc(item.text)}</span></label><button class="checklist-edit" data-checklist-edit="${esc(item.id)}" aria-label="Edit ${esc(item.text)}">Edit</button><button class="checklist-delete" data-checklist-delete="${esc(item.id)}" aria-label="Delete ${esc(item.text)}">Delete</button></div>${deletingChecklist===item.id?`<div class="delete-confirm"><span>Delete this item?</span><button data-checklist-remove="${esc(item.id)}">Delete</button><button data-checklist-cancel>Keep item</button></div>`:''}`}</li>`).join('') || '<li class="checklist-empty">No items yet. Add one below.</li>'}</ul></section>`).join('')}<section class="checklist-section checklist-add"><h2>Add an item</h2>${checklistForm()}</section>`;
+  return `<section class="page-intro"><span class="eyebrow">BEFORE WE TAKE OFF</span><h1>Ready for Taiwan?</h1><p>One checklist for both of us. Saved on this phone.</p><p class="checklist-drag-hint">Press and hold an item, then drag to reorder.</p></section>${['todo','bring'].map(category=>`<section class="checklist-section"><h2>${category==='todo'?'To do':'To bring'}</h2><ul class="checklist-items" data-checklist-category="${category}">${state.checklist.filter(item=>item.category===category).map(item=>`<li class="checklist-item ${item.done?'checked':''} ${editingChecklist===item.id?'checklist-editing':''}" data-checklist-id="${esc(item.id)}" tabindex="0" aria-keyshortcuts="Alt+ArrowUp Alt+ArrowDown" aria-label="${esc(item.text)}. Alt plus Arrow Up or Arrow Down to reorder.">${editingChecklist===item.id?checklistForm(item):`<div class="checklist-row"><label><input type="checkbox" data-checklist-check="${esc(item.id)}" ${item.done?'checked':''}><span>${esc(item.text)}</span></label><button class="checklist-edit" data-checklist-edit="${esc(item.id)}" aria-label="Edit ${esc(item.text)}">Edit</button><button class="checklist-delete" data-checklist-delete="${esc(item.id)}" aria-label="Delete ${esc(item.text)}">Delete</button></div>${deletingChecklist===item.id?`<div class="delete-confirm"><span>Delete this item?</span><button data-checklist-remove="${esc(item.id)}">Delete</button><button data-checklist-cancel>Keep item</button></div>`:''}`}</li>`).join('') || '<li class="checklist-empty">No items yet. Add one below.</li>'}</ul></section>`).join('')}<section class="checklist-section checklist-add"><h2>Add an item</h2>${checklistForm()}</section>`;
 }
 function saveChecklistItem(id,text,category) {
   text=text.trim();
@@ -122,14 +123,47 @@ function saveChecklistItem(id,text,category) {
   else {const item=state.checklist.find(i=>i.id===id);if(!item)return false;item.text=text;item.category=category;}
   editingChecklist=null;deletingChecklist=null;persist();return true;
 }
+function saveChecklistOrder(category, ids) {
+  const items=state.checklist.filter(item=>item.category===category);
+  if(!['todo','bring'].includes(category) || ids.length!==items.length || new Set(ids).size!==ids.length)return false;
+  const byId=new Map(items.map(item=>[item.id,item]));
+  if(ids.some(id=>!byId.has(id)) || ids.every((id,i)=>id===items[i].id))return false;
+  let index=0;
+  state.checklist=state.checklist.map(item=>item.category===category?byId.get(ids[index++]):item);
+  persist();return true;
+}
+function initChecklistSorting() {
+  if(!window.Sortable)return;
+  document.querySelectorAll('[data-checklist-category]').forEach(list=>{
+    checklistSortables.push(window.Sortable.create(list,{
+      draggable:'[data-checklist-id]', dataIdAttr:'data-checklist-id',
+      filter:'input, button, select, textarea, a, form, .delete-confirm', preventOnFilter:false,
+      disabled:!!editingChecklist || !!deletingChecklist,
+      delay:250, delayOnTouchOnly:true, touchStartThreshold:8, fallbackTolerance:5,
+      forceFallback:true, fallbackOnBody:true,
+      animation:window.matchMedia?.('(prefers-reduced-motion: reduce)').matches?0:150,
+      ghostClass:'checklist-drag-placeholder', chosenClass:'checklist-drag-chosen', fallbackClass:'checklist-drag-fallback',
+      scroll:true, scrollSensitivity:65, scrollSpeed:9,
+      onStart(){suppressChecklistClickUntil=Infinity;},
+      onUnchoose(){if(suppressChecklistClickUntil===Infinity)suppressChecklistClickUntil=Date.now()+350;},
+      onEnd(){
+        suppressChecklistClickUntil=Date.now()+350;
+        const ids=Array.from(list.querySelectorAll('[data-checklist-id]'),item=>item.dataset.checklistId);
+        if(saveChecklistOrder(list.dataset.checklistCategory,ids))toast('Checklist order saved');
+      },
+    }));
+  });
+}
 function currentView() { const v=location.hash.slice(1); return ['daily','summary','expenses','checklist'].includes(v)?v:'summary'; }
 function render() {
+  checklistSortables.forEach(sortable=>sortable.destroy());checklistSortables=[];
   const v=currentView();
   $('#main').innerHTML=v==='checklist'?checklist():v==='daily'?daily():v==='expenses'?expenses():summary();
   if(v==='checklist')$('#checklist-toggle').setAttribute('aria-current','page');
   else $('#checklist-toggle').removeAttribute?.('aria-current');
   $('.bottom-nav').innerHTML=[['daily','guide','Daily Guide'],['summary','summary','Trip Summary'],['expenses','expenses','Expenses']].map(([id,ic,title])=>`<a href="#${id}" ${v===id?'aria-current="page"':''}>${icon(ic)}<span>${title}</span></a>`).join('');
   document.title=`${v==='checklist'?'Pre-flight Checklist':v==='daily'?dateLabel(data.days[dayIndex].date):v==='summary'?'Trip Summary':'Expenses'} · Taiwan Together`;
+  if(v==='checklist')initChecklistSorting();
   document.querySelectorAll('[data-activity]').forEach(el=>el.addEventListener('toggle',()=>{
     if(el.open){ openActivity=el.dataset.activity; document.querySelectorAll('[data-activity]').forEach(other=>{if(other!==el)other.open=false;}); }
     else if(openActivity===el.dataset.activity)openActivity=null;
@@ -144,6 +178,22 @@ $('#scroll-top').addEventListener('click',()=>{
   $('#main').focus({preventScroll:true});
 });
 updateScrollTop();
+$('#main').addEventListener('click',e=>{
+  if(Date.now()<suppressChecklistClickUntil && e.target.closest('.checklist-items')){e.preventDefault();e.stopImmediatePropagation();}
+},true);
+$('#main').addEventListener('keydown',e=>{
+  if(!e.altKey || !['ArrowUp','ArrowDown'].includes(e.key))return;
+  const row=e.target.closest('[data-checklist-id]');if(!row || e.target!==row || editingChecklist || deletingChecklist)return;
+  e.preventDefault();
+  const category=row.closest('[data-checklist-category]').dataset.checklistCategory;
+  const ids=state.checklist.filter(item=>item.category===category).map(item=>item.id);
+  const from=ids.indexOf(row.dataset.checklistId),to=from+(e.key==='ArrowUp'?-1:1);
+  if(from<0 || to<0 || to>=ids.length)return;
+  [ids[from],ids[to]]=[ids[to],ids[from]];
+  if(saveChecklistOrder(category,ids)){
+    render();Array.from(document.querySelectorAll('[data-checklist-id]')).find(item=>item.dataset.checklistId===row.dataset.checklistId)?.focus();toast('Checklist order saved');
+  }
+});
 $('#main').addEventListener('click',e=>{
   const edit=e.target.closest('[data-checklist-edit]'), del=e.target.closest('[data-checklist-delete]'), remove=e.target.closest('[data-checklist-remove]');
   if(edit){editingChecklist=edit.dataset.checklistEdit;deletingChecklist=null;render();$('#main input[name="text"]').focus();return;}
@@ -183,7 +233,7 @@ if('serviceWorker' in navigator) {
   try {
     registration=await navigator.serviceWorker.register('./sw.js');
     await navigator.serviceWorker.ready;
-    const ready=await caches.has('taiwan-offline-v6');
+    const ready=await caches.has('taiwan-offline-v7');
     if(ready){$('#offline-status').textContent='Trip downloaded · available offline';$('#download').textContent='Refresh offline download';}
   } catch { $('#offline-status').textContent='Offline support unavailable in this browser'; }
 }

@@ -47,3 +47,11 @@
 
 .activity-detail img.portrait-photo{object-fit:contain;background:var(--raised)}
 
+
+.checklist-drag-hint{font-size:11px;color:var(--muted);margin-top:-15px;margin-bottom:22px}
+.checklist-item:not(.checklist-editing){cursor:grab;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.checklist-item:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.checklist-drag-chosen{background:var(--raised);border-radius:8px}
+.checklist-drag-placeholder{opacity:.3}
+.checklist-drag-fallback{background:var(--surface);border:1px solid var(--accent);border-radius:10px;box-shadow:var(--shadow);padding:12px;cursor:grabbing;z-index:30!important;list-style:none}
+

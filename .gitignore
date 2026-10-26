@@ -19,6 +19,8 @@
 !/assets/*.jpg
 !/assets/*.png
 !/assets/*.svg
+!/assets/sortable.min.js
+!/assets/sortable.LICENSE.txt
 /assets/*review*.jpg
 !/scripts/
 /scripts/*
