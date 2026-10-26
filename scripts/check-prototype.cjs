@@ -47,6 +47,17 @@ async function testApp(){
   const tour=a.activityCard(data.days[3].activities[3]);assert.equal((tour.match(/class="tour-stop"/g)||[]).length,4);assert.ok(tour.includes('assets/jiufen.jpg'));assert.ok(tour.includes('query=Shifen+Old+Street'));
   const day8=await appAt('2026-11-08T00:00:00Z');assert.equal(day8.api.day,2);assert.ok(day8.api.daily().includes('Bad-weather backup'));
   const day9=await appAt('2026-11-09T00:00:00Z');assert.equal(day9.api.day,3);assert.ok(day9.api.daily().includes('not booked'));
+  const day10=await appAt('2026-11-10T00:00:00Z');assert.equal(day10.api.day,4);
+  const nov10=data.days[4];assert.equal(nov10.activities.length,17);
+  assert.deepEqual(Array.from(a.total(nov10)),[3740,3740]);assert.equal(a.money(a.total(nov10),'PHP'),'₱7,360');assert.equal(a.money(a.total(nov10),'PHP',true),'₱3,680');
+  assert.equal(nov10.activities[4].cost[0],600);assert.equal(nov10.activities[6].cost[0],0,'Gondola day passes counted once');
+  assert.ok(!nov10.activities.some(item=>/Observatory/.test(item.title)),'No Observatory activity or admission');
+  assert.ok(day10.api.daily().includes('not reserved or guaranteed'));assert.ok(day10.api.daily().includes('Reservations &amp; backup plans'));
+  assert.ok(a.activityCard(nov10.activities[8]).includes('14F'));assert.ok(a.activityCard(nov10.activities[8]).includes('meowchan.com.tw'));
+  for(const activity of nov10.activities.filter(item=>item.photoKey))assert.ok(a.activityCard(activity).includes(`./assets/${activity.photoKey}.jpg`),'Nov 10 destination photo renders');
+  assert.ok(!JSON.stringify(nov10.activities).includes('₱2,960'),'Old source PHP conversions are replaced by app calculations');
+  assert.ok(a.summary().includes('Meow Chan') || a.summary().includes('貓將'));
+  assert.ok(!a.summary().includes('Nov 10–11 itineraries are still pending'));
   assert.ok(a.summary().includes('Tiaoshi Coast'));assert.ok(a.expenses().includes('Klook tour · 2 adults'));
   const starterCount=a.state.checklist.length;assert.ok(starterCount>10);
   assert.equal(a.saveChecklistItem('new','   ','todo'),false,'Blank items rejected');

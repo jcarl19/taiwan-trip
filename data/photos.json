@@ -185,5 +185,104 @@
     "license": "CC BY 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "changes": "Resized and compressed"
+  },
+  "taipei-zoo": {
+    "src": "./assets/taipei-zoo.jpg",
+    "alt": "Giant panda at Taipei Zoo",
+    "width": 1100,
+    "height": 825,
+    "author": "KQuhen",
+    "source": "https://commons.wikimedia.org/wiki/File:Giant_panda_Taipei_Zoo.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "changes": "Resized and compressed"
+  },
+  "maokong-gondola": {
+    "src": "./assets/maokong-gondola.jpg",
+    "alt": "Maokong Gondola cabins",
+    "width": 1100,
+    "height": 733,
+    "author": "Da-Eye",
+    "source": "https://commons.wikimedia.org/wiki/File:Maokong_Gondola_regular_cabins_20120609.jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "changes": "Resized and compressed"
+  },
+  "maokong": {
+    "src": "./assets/maokong.jpg",
+    "alt": "Maokong Gondola scenery",
+    "width": 1100,
+    "height": 825,
+    "author": "Smiley.toerist",
+    "source": "https://commons.wikimedia.org/wiki/File:Maokong_Gondola_2014_6.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "changes": "Resized and compressed"
+  },
+  "xinyi-a13": {
+    "src": "./assets/xinyi-a13.jpg",
+    "alt": "Xinyi A13 department store exterior",
+    "width": 825,
+    "height": 1100,
+    "author": "MiNe",
+    "source": "https://commons.wikimedia.org/wiki/File:FEDS_Taipei_A13_Store_Exterior_Front_View_202001.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "changes": "Resized and compressed"
+  },
+  "taipei101": {
+    "src": "./assets/taipei101.jpg",
+    "alt": "Taipei 101 exterior",
+    "width": 268,
+    "height": 1100,
+    "author": "Accord14",
+    "source": "https://commons.wikimedia.org/wiki/File:Exterior_of_Taipei_101_20170212.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "changes": "Resized and compressed"
+  },
+  "four-four": {
+    "src": "./assets/four-four.jpg",
+    "alt": "Four Four South Village with Taipei 101 in the background (2017 photo)",
+    "width": 825,
+    "height": 1100,
+    "author": "Hal Maa",
+    "source": "https://commons.wikimedia.org/wiki/File:Four_Four_South_Village_(%E5%9B%9B%E5%9B%9B%E5%8D%97%E6%9D%91)_at_9_March_2017_in_Taipei,_showing_Taipei_101_(%E8%87%BA%E5%8C%97101)_and_a_new_skyscraper_being_built_in_the_background.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "changes": "Resized and compressed"
+  },
+  "love101": {
+    "src": "./assets/love101.jpg",
+    "alt": "LOVE sculpture outside Taipei 101",
+    "width": 734,
+    "height": 1100,
+    "author": "李家宇",
+    "source": "https://commons.wikimedia.org/wiki/File:LOVE%E5%85%AC%E5%85%B1%E8%97%9D%E8%A1%93%E4%BD%9C%E5%93%81%E8%88%87%E4%BF%A1%E7%BE%A9%E5%8D%80%E8%A1%8C%E6%94%BF%E4%B8%AD%E5%BF%83_20140821.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "changes": "Resized and compressed"
+  },
+  "xinyi": {
+    "src": "./assets/xinyi.jpg",
+    "alt": "Xinyi District shopping streets at night",
+    "width": 1100,
+    "height": 825,
+    "author": "Kwongning210",
+    "source": "https://commons.wikimedia.org/wiki/File:TW_%E5%8F%B0%E5%8C%97_Taipei_%E4%BF%A1%E7%BE%A9%E5%8D%80_Xinyi_District_%E6%9D%BE%E6%99%BA%E8%B7%AF_Songzhi_Road_view_SongGao_Road_shopping_malls_night_Feb-2013.JPG",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "changes": "Resized and compressed"
+  },
+  "raohe": {
+    "src": "./assets/raohe.jpg",
+    "alt": "Raohe Night Market west entrance at night",
+    "width": 1100,
+    "height": 619,
+    "author": "Yosomono from Fukuoka, Japan",
+    "source": "https://commons.wikimedia.org/wiki/File:West_Entrance,_Raohe_St._Night_Market_20110211_night.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "changes": "Resized and compressed"
   }
 }

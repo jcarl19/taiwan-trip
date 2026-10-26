@@ -44,3 +44,6 @@
 .delete-confirm span{flex:1;color:var(--warm)}
 @media(max-width:380px){.brand{font-size:15px;gap:8px}.brand-mark{font-size:20px;padding:5px 8px}.brand small{font-size:8px;letter-spacing:1.4px}.header-actions{gap:6px}.checklist-section{padding:17px 13px}.checklist-row{gap:2px}.checklist-row button{padding:6px}.checklist-row label{font-size:12px;gap:8px}}
 
+
+.activity-detail img.portrait-photo{object-fit:contain;background:var(--raised)}
+

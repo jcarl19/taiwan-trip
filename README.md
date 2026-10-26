@@ -6,11 +6,11 @@ Run `npm run dev`, then open http://localhost:5173. No dependencies or install s
 
 ## Content and behavior
 
-- Nov 6 and Nov 7 imported from the provided final Markdown itineraries; Nov 8–11 explicitly pending.
+- Nov 6–10 imported from the provided final Markdown itineraries; Nov 11 explicitly pending. Nov 9 keeps one grouped day-tour card with four stop sections.
 - Current Taiwan date selects the Daily Guide during the trip; Trip Summary opens outside the trip. Hash links allow opening each screen directly.
 - Daily cards start collapsed and allow one expanded activity. Completed cards remain faded with checkmarks; All/Completed/Unfinished filter and undo supported.
 - Expenses permit multiple expanded day cards. Estimates use NT$1 = PHP1.968, for two people and PHP per person. Restaurant choice is exclusive and persisted.
-- Budget is partial: Nov 6 has no estimates supplied; Nov 8–11 not supplied. Nov 7 gross planning figures retain the source's overlapping EasyCard prepaid value and fares, clearly labeled.
+- Budget is partial: Nov 6 and Nov 11 costs have not been supplied. Nov 7 gross planning figures retain the source's overlapping EasyCard prepaid value and fares, clearly labeled. Nov 8 row amounts total NT$1,300–2,090. Native PHP quotes and allowances on Nov 9 are preserved; TWD equivalents use the app rate.
 - Theme, lunch choice and activity progress live in browser localStorage. No cross-device sync or backend.
 - Header checklist button opens a shared pre-flight list with To do / To bring starter items. Add, edit, move between sections, check/uncheck and delete are saved locally alongside activity progress. Each phone retains its own copy. Deletion has an inline confirmation; intentionally deleted starter items do not return on reload.
 - Download for offline use caches the local guide and available images. External Google Maps links still need internet or separate offline maps.
@@ -25,3 +25,5 @@ Open the HTTPS Pages URL on each phone, download the guide for offline use, and 
 Images: original Taipei SVG illustration plus local Wikimedia Commons photos of Longshan, CKS Memorial Hall, Rainbow Six Crossing, Red House, DON DON DONKI, Eslite's building, Taoyuan Terminal 1 and a Ximending food stall. Credits, licenses and historical photo dates where relevant appear in the expanded activity. New day photos include Qingtiangang, Shilin, Tianhou Temple, Nishi Honganji, Cixian Temple, Tiaoshi, Yehliu, Shifen and Jiufen. All photos are included in the offline download. Full provenance is in `data/photos.json`.
 
 Source itinerary travel details and unconfirmed arrangements were retained, not independently verified. The prototype follows the chat's UI decisions over the Markdown's older interactive-control specification.
+
+Nov 10 follows the final zoo / round-trip gondola / Meow Chan / Xinyi / Raohe itinerary (17 activities). No Observatory admission. NT$3,740 for two uses the agreed 1.968 planning rate: PHP7,360.32 total, PHP3,680.16/person (rounded in UI). Source PHP figures at 1.85 were replaced by the app currency calculations. Gondola passes are counted once. Restaurant window seating and operating conditions remain unconfirmed. Destination photos are local, attributed, and included in the offline download.

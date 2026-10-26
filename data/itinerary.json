@@ -2555,9 +2555,801 @@
     {
       "date": "2026-11-10",
       "label": "Day 4",
-      "title": "More memories ahead",
-      "subtitle": "Taiwan · itinerary coming soon",
-      "activities": []
+      "title": "Pandas, sky rides & city lights",
+      "subtitle": "Taipei Zoo → Maokong → Xinyi → Raohe",
+      "activities": [
+        {
+          "id": "10-01",
+          "time": "7:00–7:40 AM",
+          "title": "Breakfast",
+          "location": "",
+          "cost": [
+            300,
+            300
+          ],
+          "maps": "https://www.google.com/maps/search/?api=1&query=Yong+He+Soy+Milk+Ximending+Taipei",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "ordered",
+              "text": "Have breakfast near your Ximending hotel."
+            },
+            {
+              "kind": "ordered",
+              "text": "**Option A: 7-Eleven** — quick onigiri, sandwich, fruit, or other light items."
+            },
+            {
+              "kind": "ordered",
+              "text": "**Option B: Yong He Soy Milk** — traditional Taiwanese breakfast; choose suitable lighter dishes."
+            },
+            {
+              "kind": "ordered",
+              "text": "Finish by 7:40 AM and walk to Ximen MRT."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** Favor lighter/lower-fat food if oily dishes trigger gallstone symptoms."
+            }
+          ],
+          "summary": true,
+          "category": "food"
+        },
+        {
+          "id": "10-02",
+          "time": "7:40–8:50 AM",
+          "title": "MRT to Taipei Zoo",
+          "location": "Ximen BL11 → Zhongxiao Fuxing BL15/BR10 → Taipei Zoo BR01.",
+          "cost": [
+            100,
+            100
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&origin=Ximen+MRT+Station+Taipei&destination=Taipei+Zoo&travelmode=transit",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "ordered",
+              "text": "Enter **Ximen MRT (BL11)**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Board **Blue Line** toward **Nangang Exhibition Center**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Alight at **Zhongxiao Fuxing (BL15)**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Transfer to **Brown Line (BR10)** toward **Taipei Zoo**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Get off at **Taipei Zoo (BR01)**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Use **Exit 1** and walk to the **Taipei Zoo main entrance**."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Route:** Ximen BL11 → Zhongxiao Fuxing BL15/BR10 → Taipei Zoo BR01."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** Allocate approximately 50–65 minutes including transfer and walk; aim to be at the zoo before its 9:00 AM opening."
+            }
+          ],
+          "summary": false,
+          "category": "transport"
+        },
+        {
+          "id": "10-03",
+          "time": "9:00–9:50 AM",
+          "title": "Taipei Zoo",
+          "location": "",
+          "cost": [
+            200,
+            200
+          ],
+          "maps": "https://www.google.com/maps/search/?api=1&query=Taipei+Zoo",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "ordered",
+              "text": "Enter the zoo at opening."
+            },
+            {
+              "kind": "ordered",
+              "text": "Go straight toward **Giant Panda House** — the main priority."
+            },
+            {
+              "kind": "ordered",
+              "text": "Spend around 20–25 minutes viewing pandas and taking permitted photos."
+            },
+            {
+              "kind": "ordered",
+              "text": "Visit **Koala House only if time permits**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Target departure from the zoo at **9:50 AM**."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** This is *not* the original four-exhibit zoo visit. **Penguin House and Pangolin Dome are no longer in the final morning plan.** The zoo is large and exhibit queues can make even this schedule tight."
+            }
+          ],
+          "summary": true,
+          "category": "explore",
+          "photoKey": "taipei-zoo"
+        },
+        {
+          "id": "10-04",
+          "time": "9:50–10:10 AM",
+          "title": "Walk to Maokong Gondola Station",
+          "location": "",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&origin=Taipei+Zoo&destination=Maokong+Gondola+Taipei+Zoo+Station&travelmode=walking",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "ordered",
+              "text": "Exit via the main zoo entrance."
+            },
+            {
+              "kind": "ordered",
+              "text": "Follow signs to **Maokong Gondola Taipei Zoo Station** (lower station)."
+            },
+            {
+              "kind": "ordered",
+              "text": "Allow around 10–15 minutes for walking."
+            },
+            {
+              "kind": "ordered",
+              "text": "Prepare tickets or payment and join the boarding queue."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Important distinction:** **Taipei Zoo MRT (BR01)** and **Taipei Zoo Gondola Station** are separate stations. The gondola station is approximately 350 meters from the MRT station; actual walk from the zoo gate depends on your exit position."
+            }
+          ],
+          "summary": false,
+          "category": "transport"
+        },
+        {
+          "id": "10-05",
+          "time": "10:10–11:00 AM",
+          "title": "Maokong Gondola uphill",
+          "location": "",
+          "cost": [
+            600,
+            600
+          ],
+          "maps": "https://www.google.com/maps/search/?api=1&query=Maokong+Gondola+Taipei+Zoo+Station",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "ordered",
+              "text": "Board at **Taipei Zoo Gondola Station**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Choose a **regular cabin** for a shorter queue; Crystal Cabin is optional if waiting time permits."
+            },
+            {
+              "kind": "ordered",
+              "text": "**Stay onboard at Taipei Zoo South Station**."
+            },
+            {
+              "kind": "ordered",
+              "text": "**Stay onboard at Zhinan Temple Station**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Get off at **Maokong Station**, the final station."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Station order (uphill):** Taipei Zoo → Taipei Zoo South → Zhinan Temple → Maokong. There are also non-passenger angle stations along the aerial route."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** The cable-car ride itself is typically 20–30 minutes one way; the wider time window includes boarding/queue allowance. Crystal Cabin fees or additional queue time are not built into the base plan."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Operator:** [Official Maokong Gondola site](https://english.gondola.taipei/)"
+            }
+          ],
+          "summary": true,
+          "category": "explore",
+          "photoKey": "maokong-gondola"
+        },
+        {
+          "id": "10-06",
+          "time": "11:00–11:20 AM",
+          "title": "Maokong scenic photos",
+          "location": "",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/search/?api=1&query=Maokong+Gondola+Station",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "ordered",
+              "text": "Leave Maokong Station."
+            },
+            {
+              "kind": "ordered",
+              "text": "Visit a **nearby viewpoint** and take mountain/tea-country photos."
+            },
+            {
+              "kind": "ordered",
+              "text": "Remain near the station; no long trail."
+            },
+            {
+              "kind": "ordered",
+              "text": "Return for the downhill gondola around **11:20 AM**."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Not included:** Zhangshu Trail full walk, Mountain Tea House lunch, or Zhinan Temple visit."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** If gondola boarding took too long, **skip or shorten** this stop to preserve the noon departure goal."
+            }
+          ],
+          "summary": true,
+          "category": "explore",
+          "photoKey": "maokong"
+        },
+        {
+          "id": "10-07",
+          "time": "11:20 AM–12:00 PM",
+          "title": "Gondola downhill + MRT access",
+          "location": "",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&origin=Maokong+Gondola+Taipei+Zoo+Station&destination=Taipei+Zoo+MRT+Station&travelmode=walking",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "ordered",
+              "text": "Board Maokong Gondola **downhill**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Remain onboard at **Zhinan Temple** and **Taipei Zoo South**."
+            },
+            {
+              "kind": "ordered",
+              "text": "**Get off at Taipei Zoo Gondola Station** — the lower terminal, not Zoo South."
+            },
+            {
+              "kind": "ordered",
+              "text": "Walk to **Taipei Zoo MRT (BR01)**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Aim to reach BR01 by **12:00 PM**."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** This timing assumes manageable queue lengths. Maokong scenic time is the first activity to trim."
+            }
+          ],
+          "summary": false,
+          "category": "transport"
+        },
+        {
+          "id": "10-08",
+          "time": "12:00–1:00 PM",
+          "title": "MRT to Xinyi A13",
+          "location": "",
+          "cost": [
+            100,
+            100
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&origin=Taipei+Zoo+MRT+Station&destination=Far+Eastern+Department+Store+Xinyi+A13&travelmode=transit",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "ordered",
+              "text": "Board **Brown Line** at **Taipei Zoo (BR01)** toward Nangang Exhibition Center."
+            },
+            {
+              "kind": "ordered",
+              "text": "Get off at **Zhongxiao Fuxing (BR10/BL15)**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Transfer to **Blue Line** toward Nangang Exhibition Center."
+            },
+            {
+              "kind": "ordered",
+              "text": "Get off at **Taipei City Hall (BL18)**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Walk to **Far Eastern Department Store Xinyi A13**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Go to **14F** for lunch."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** Approximate 50–60-minute transfer-and-walk allowance."
+            }
+          ],
+          "summary": false,
+          "category": "transport"
+        },
+        {
+          "id": "10-09",
+          "time": "1:00–2:15 PM",
+          "title": "Lunch: 貓將 日本料理 | 信義A13店",
+          "location": "Far Eastern Department Store Xinyi A13, 14th floor, No. 58 Songren Road, Xinyi District, Taipei.",
+          "cost": [
+            1600,
+            1600
+          ],
+          "maps": "https://www.google.com/maps/search/?api=1&query=%E8%B2%93%E5%B0%87+%E6%97%A5%E6%9C%AC%E6%96%99%E7%90%86+%E4%BF%A1%E7%BE%A9A13%E5%BA%97",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Restaurant:** **Meow Chan Japanese Restaurant — Xinyi A13 branch**"
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Location:** Far Eastern Department Store Xinyi A13, **14th floor**, **No. 58 Songren Road, Xinyi District, Taipei**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Enter Xinyi A13 and take the elevator to 14F."
+            },
+            {
+              "kind": "ordered",
+              "text": "Request a **window-side table facing Taipei 101**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Enjoy Japanese lunch with city/tower views if the requested table is available."
+            },
+            {
+              "kind": "ordered",
+              "text": "For a lighter meal, consider lean fish, shrimp, rice, or non-creamy soups based on the menu."
+            },
+            {
+              "kind": "ordered",
+              "text": "Finish around 2:15 PM."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Booking status:** The **1:00 PM table/window view has NOT been reserved or guaranteed**. Request and confirm directly with the restaurant."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Restaurant:** [Official branch page](https://www.meowchan.com.tw/zh-TW/store/Xinyi_A13)"
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reservations:** [EZTABLE page](https://restaurant.eztable.com/restaurant/17794)"
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Optional Chinese window-table request:**"
+            },
+            {
+              "kind": "paragraph",
+              "text": "您好，我們想預訂11月10日下午1:00兩位的座位。如果可以，希望安排能看到台北101的靠窗座位，謝謝！"
+            }
+          ],
+          "summary": true,
+          "category": "food",
+          "photoKey": "xinyi-a13"
+        },
+        {
+          "id": "10-10",
+          "time": "2:15–2:45 PM",
+          "title": "Famous Taipei 101 escalator",
+          "location": "",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/search/?api=1&query=Taipei+101+World+Trade+Center+MRT+Exit+4",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "ordered",
+              "text": "Walk from Xinyi A13 toward **Taipei 101/World Trade Center MRT (R03)**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Look for **Exit 4** and the well-known escalator/tower perspective."
+            },
+            {
+              "kind": "ordered",
+              "text": "Take photos from **safe, permitted stationary positions**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Continue toward Four Four South Village."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** Follow any posted escalator photography restrictions. Do **not** place a phone on moving escalator steps or obstruct passengers."
+            }
+          ],
+          "summary": true,
+          "category": "explore",
+          "photoKey": "taipei101"
+        },
+        {
+          "id": "10-11",
+          "time": "2:45–3:30 PM",
+          "title": "Four Four South Village",
+          "location": "",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/search/?api=1&query=Four+Four+South+Village+Taipei",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "ordered",
+              "text": "Walk to **Four Four South Village (四四南村)**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Explore the historic low-rise village buildings."
+            },
+            {
+              "kind": "ordered",
+              "text": "Capture **Taipei 101 behind the older architecture**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Return toward the Taipei 101 plaza."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** Daylight photos work particularly well here."
+            }
+          ],
+          "summary": true,
+          "category": "explore",
+          "photoKey": "four-four"
+        },
+        {
+          "id": "10-12",
+          "time": "3:30–4:00 PM",
+          "title": "LOVE Sculpture + Taipei 101 exterior",
+          "location": "",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/search/?api=1&query=Taipei+101+LOVE+Sculpture",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "ordered",
+              "text": "Go toward the outdoor areas of Taipei 101."
+            },
+            {
+              "kind": "ordered",
+              "text": "Find the **LOVE Sculpture/photo spot**, if publicly accessible."
+            },
+            {
+              "kind": "ordered",
+              "text": "Take couple shots and wide-angle tower exterior photos."
+            },
+            {
+              "kind": "ordered",
+              "text": "Proceed to the shopping mall."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** Exact installation/availability can change; look for other nearby free photo angles if needed."
+            }
+          ],
+          "summary": true,
+          "category": "explore",
+          "photoKey": "love101"
+        },
+        {
+          "id": "10-13",
+          "time": "4:00–5:00 PM",
+          "title": "Taipei 101 Shopping Mall",
+          "location": "",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/search/?api=1&query=Taipei+101+Shopping+Mall",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "ordered",
+              "text": "Enter **Taipei 101 Shopping Mall**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Explore the mall, retail stores, and atrium."
+            },
+            {
+              "kind": "ordered",
+              "text": "Browse souvenirs, fashion, and cafes."
+            },
+            {
+              "kind": "ordered",
+              "text": "Take permitted photos."
+            },
+            {
+              "kind": "ordered",
+              "text": "Head back outside around 5:00 PM."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Important:** **No 89F Observatory admission, elevator experience, or ticket fee.**"
+            }
+          ],
+          "summary": true,
+          "category": "explore",
+          "photoKey": "taipei101"
+        },
+        {
+          "id": "10-14",
+          "time": "5:00–7:15 PM",
+          "title": "Xinyi District evening free roam",
+          "location": "",
+          "cost": [
+            0,
+            0
+          ],
+          "maps": "https://www.google.com/maps/search/?api=1&query=Xinyi+Shopping+District+Taipei",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "ordered",
+              "text": "Explore Xinyi's pedestrian shopping streets around Taipei 101."
+            },
+            {
+              "kind": "ordered",
+              "text": "Browse nearby malls, e.g. **Breeze Nan Shan** and **Shin Kong Mitsukoshi**, if interested."
+            },
+            {
+              "kind": "ordered",
+              "text": "Enjoy the city lights and take evening outfit/skyscraper photos."
+            },
+            {
+              "kind": "ordered",
+              "text": "Optional cafe break or shopping."
+            },
+            {
+              "kind": "ordered",
+              "text": "Head toward your chosen MRT departure point around 7:15 PM."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Note:** Xinyi is a modern mall/shopping district rather than a traditional night market. **Dinner is planned at Raohe**, so no separate full dinner is required here."
+            }
+          ],
+          "summary": true,
+          "category": "explore",
+          "photoKey": "xinyi"
+        },
+        {
+          "id": "10-15",
+          "time": "7:15–7:50 PM",
+          "title": "Travel to Raohe Night Market",
+          "location": "",
+          "cost": [
+            80,
+            80
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&origin=Taipei+City+Hall+MRT+Station&destination=Raohe+Street+Night+Market&travelmode=transit",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "text": "**Planned MRT route:**"
+            },
+            {
+              "kind": "ordered",
+              "text": "Enter **Taipei City Hall (BL18)**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Blue Line toward Dingpu → **Zhongxiao Fuxing**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Transfer to Brown Line toward Nangang Exhibition Center → **Nanjing Fuxing**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Transfer to Green Line toward Songshan → **Songshan (G19)**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Take **Exit 5** and walk to Raohe Night Market."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** This involves multiple transfers. Recheck live transit directions; a different nearby starting station/route may be faster on the day."
+            }
+          ],
+          "summary": false,
+          "category": "transport"
+        },
+        {
+          "id": "10-16",
+          "time": "7:50–9:30 PM",
+          "title": "Raohe Night Market dinner and food crawl",
+          "location": "",
+          "cost": [
+            700,
+            700
+          ],
+          "maps": "https://www.google.com/maps/search/?api=1&query=Raohe+Street+Night+Market",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "ordered",
+              "text": "Enter near **Songshan Ciyou Temple**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Photograph the colorful night-market entrance and temple."
+            },
+            {
+              "kind": "ordered",
+              "text": "Explore Taiwanese street-food stalls."
+            },
+            {
+              "kind": "ordered",
+              "text": "Have dinner via a **food crawl** (shared dishes and snacks as preferred)."
+            },
+            {
+              "kind": "ordered",
+              "text": "Browse affordable souvenirs, treats, and shopping stalls."
+            },
+            {
+              "kind": "ordered",
+              "text": "Return toward Songshan MRT around 9:30 PM."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Reminder:** For gallstone-related comfort, consider smaller and lower-fat options; oily and fried dishes may trigger symptoms."
+            }
+          ],
+          "summary": true,
+          "category": "food",
+          "photoKey": "raohe"
+        },
+        {
+          "id": "10-17",
+          "time": "9:30–10:15 PM",
+          "title": "Return to Ximending",
+          "location": "Songshan G19 → Ximen G12, direct train.",
+          "cost": [
+            60,
+            60
+          ],
+          "maps": "https://www.google.com/maps/dir/?api=1&origin=Songshan+MRT+Station+Taipei&destination=Ximen+MRT+Station+Taipei&travelmode=transit",
+          "steps": [],
+          "notes": [],
+          "guide": [],
+          "blocks": [
+            {
+              "kind": "ordered",
+              "text": "Enter **Songshan MRT (G19)**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Board **Green Line toward Xindian**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Stay on the same train to **Ximen (G12)**."
+            },
+            {
+              "kind": "ordered",
+              "text": "Walk back to your Ximending hotel."
+            },
+            {
+              "kind": "paragraph",
+              "text": "**Route:** Songshan G19 → Ximen G12, direct train."
+            }
+          ],
+          "summary": false,
+          "category": "transport"
+        }
+      ],
+      "notice": "Morning zoo and round-trip gondola timing is tight. Target Taipei Zoo MRT by noon; shorten the Maokong stop if delayed. Meow Chan lunch/window seating is not reserved or guaranteed. No Taipei 101 Observatory visit or ticket fee.",
+      "budgetNote": "NT$3,740 for two, converted using the agreed app rate of ₱1.968/TWD (the source used ₱1.85). Gondola downhill is covered by the NT$600 day-pass allowance. No NT$1,200 Observatory fee. Shopping, optional snacks/drinks, Crystal Cabin extras and unplanned taxis excluded.",
+      "extra": {
+        "title": "Reservations & backup plans",
+        "blocks": [
+          {
+            "kind": "bullet",
+            "text": "[ ] **Meow Chan (貓將 日本料理 | 信義A13店):** Confirm **Nov 10, 1:00 PM, two guests**, and request **Taipei 101-facing window seats**. Window seating is **not guaranteed**."
+          },
+          {
+            "kind": "bullet",
+            "text": "[ ] **Maokong Gondola:** Check the [official operations status](https://english.gondola.taipei/) on the morning of Nov 10. Strong winds, storms, or maintenance could close or delay service."
+          },
+          {
+            "kind": "bullet",
+            "text": "[ ] **Zoo:** Prioritize pandas. Koalas only if time. Do not try to add penguins and pangolins back into the 50-minute visit."
+          },
+          {
+            "kind": "bullet",
+            "text": "[ ] **If uphill gondola queues are long:** Shorten/skip the 20-minute Maokong viewpoint stop to protect lunch arrival."
+          },
+          {
+            "kind": "bullet",
+            "text": "[ ] **If gondola is suspended:** Skip Maokong rather than risk the Xinyi lunch; go to Xinyi earlier for more sightseeing."
+          },
+          {
+            "kind": "bullet",
+            "text": "[ ] **Escalator photo spot:** Observe safety rules and current signs; take photographs only where permitted."
+          },
+          {
+            "kind": "bullet",
+            "text": "[ ] **Taipei 101:** No 89F Observatory tickets, no entry, and no NT$1,200 fee in this finalized version."
+          },
+          {
+            "kind": "bullet",
+            "text": "[ ] **Gallstone-friendly eating:** Favor lower-fat dishes and avoid large fried/oily meals if these trigger symptoms."
+          }
+        ]
+      }
     },
     {
       "date": "2026-11-11",
