@@ -9,7 +9,7 @@ async function appAt(now,savedRaw){
   class Clock extends Date {constructor(...args){super(...(args.length?args:[now]));}}
   const context={Date:Clock,Intl,console,URL,crypto:require('node:crypto').webcrypto,setTimeout:()=>0,clearTimeout(){},location:{hash:''},history:{replaceState(_,__,hash){context.location.hash=hash;}},document:{documentElement:{dataset:{}},title:'',querySelector:el,querySelectorAll:()=>[]},localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},fetch:async url=>({ok:true,json:async()=>url.endsWith('photos.json')?JSON.parse(fs.readFileSync(path.join(root,'data/photos.json'),'utf8')):structuredClone(data)}),navigator:{},window:{addEventListener(){},scrollTo(){}}};
   vm.createContext(context);
-  await vm.runInContext(`(async()=>{${source}\nglobalThis.testApi={money,cost,total,tripTotal,activityCard,daily,summary,expenses,checklist,saveChecklistItem,saveChecklistOrder,render,state,get day(){return dayIndex},set day(v){dayIndex=v},get filter(){return filter}};})()`,context);
+  await vm.runInContext(`(async()=>{${source}\nglobalThis.testApi={money,cost,total,tripTotal,activityCard,daily,summary,expenses,checklist,saveChecklistItem,saveChecklistOrder,buyScreen,saveBuyItem,buyCost,expenseRows,currentBuyDayIndex,render,state,get buyDay(){return buyDayIndex},set buyDay(v){buyDayIndex=v},get day(){return dayIndex},set day(v){dayIndex=v},get filter(){return filter}};})()`,context);
   return {context,api:context.testApi,elements,storage};
 }
 async function testApp(){
@@ -117,6 +117,47 @@ async function testApp(){
   assert.deepEqual(Array.from(reorderedReload.api.state.checklist.filter(i=>i.category==='bring'),i=>i.id),reversedBring);
   sorting.context.location.hash='#expenses';sorting.api.render();assert.equal(destroyed,2,'Drag instances cleaned up on navigation');
   console.log('PASS: checklist drag wiring, independent list ordering, validation, reload persistence and cleanup');
+  const shopping=await appAt('2026-11-06T16:30:00Z'),shop=shopping.api;
+  assert.equal(shop.buyDay,1,'Shopping defaults to current Taiwan date');
+  assert.equal((await appAt('2026-10-01T00:00:00Z')).api.buyDay,0);
+  assert.equal((await appAt('2026-11-15T00:00:00Z')).api.buyDay,5);
+  assert.equal(shop.state.buyItems.length,0,'Existing users start with an empty shopping list');
+  const baseDay=Array.from(shop.total(data.days[1])),baseTrip=shop.tripTotal()[0];
+  assert.equal(shop.saveBuyItem('new','2026-11-07','Shampoo',100,'TWD'),true);
+  const shampoo=shop.state.buyItems.at(-1);
+  assert.equal(shop.saveBuyItem('new','2026-11-07','Soap',196.80,'PHP'),true);
+  const soap=shop.state.buyItems.at(-1);
+  assert.ok(Math.abs(shop.total(data.days[1])[0]-(baseDay[0]+200))<1e-8);
+  assert.ok(Math.abs(shop.tripTotal()[0]-(baseTrip+200))<1e-8);
+  assert.ok(shop.expenses().includes('To Buy · Shampoo'));assert.ok(shop.summary().includes('NT$2,400'));
+  assert.equal(shop.saveBuyItem('new','2026-11-08','Sunscreen',50,'TWD'),true);
+  assert.ok(shop.buyScreen().includes('Shampoo'));assert.ok(!shop.buyScreen().includes('Sunscreen'),'Dates filter shopping items');
+  assert.ok(!shop.buyScreen().includes('name="quantity"'),'Only name and price fields');
+  assert.ok(shop.buyScreen().includes('data-buy-currency="PHP"'));
+  assert.equal(shop.saveBuyItem(soap.id,'2026-11-07','Soap refill',98.40,'PHP'),true);
+  assert.ok(Math.abs(shop.total(data.days[1])[0]-(baseDay[0]+150))<1e-8);
+  shopping.elements.get('#main').handlers.change({target:{dataset:{buyCheck:shampoo.id},checked:true,closest:()=>({classList:{toggle(){}}})}});
+  assert.equal(shampoo.bought,true);assert.ok(Math.abs(shop.total(data.days[1])[0]-(baseDay[0]+150))<1e-8,'Bought items remain in estimates');
+  const shoppingReload=await appAt('2026-11-07T00:00:00Z',shopping.storage.get('taiwan-together-v1'));
+  assert.equal(shoppingReload.api.state.buyItems.find(i=>i.id===shampoo.id).bought,true);
+  assert.equal(shoppingReload.api.state.buyItems.find(i=>i.id===soap.id).currency,'PHP');
+  assert.equal(shop.saveBuyItem('new','2026-11-12','Outside trip',10,'TWD'),false);
+  assert.equal(shop.saveBuyItem('new','2026-11-07',' ',10,'TWD'),false);
+  assert.equal(shop.saveBuyItem('new','2026-11-07','Negative',-1,'TWD'),false);
+  assert.equal(shop.saveBuyItem('new','2026-11-07','Invalid',NaN,'TWD'),false);
+  assert.equal(shop.saveBuyItem('new','2026-11-07','Invalid',10,'USD'),false);
+  shopping.context.location.hash='#buy';shop.render();assert.ok(shopping.elements.get('#main').innerHTML.includes('To Buy'));
+  assert.ok(!shopping.elements.get('.bottom-nav').innerHTML.includes('#buy'),'Shopping uses the header, not bottom navigation');
+  shopping.elements.get('#main').handlers.click({target:{closest:selector=>selector==='#next-buy-day'?{}:null}});assert.equal(shop.buyDay,2);assert.ok(shop.buyScreen().includes('Sunscreen'));
+  shopping.elements.get('#main').handlers.click({target:{closest:selector=>selector==='#prev-buy-day'?{}:null}});assert.equal(shop.buyDay,1);
+  shopping.elements.get('#main').handlers.click({target:{closest:selector=>selector==='[data-buy-remove]'?{dataset:{buyRemove:soap.id}}:null}});
+  assert.ok(Math.abs(shop.total(data.days[1])[0]-(baseDay[0]+100))<1e-8,'Delete removes the estimate');
+  assert.equal(shop.saveBuyItem('new','2026-11-06','Zero price sample',0,'TWD'),true);
+  assert.ok(shop.expenses().includes('To Buy · Zero price sample'));
+  shop.buyDay=0;assert.ok(shop.buyScreen().includes('id="prev-buy-day" aria-label="Previous shopping day" disabled'));
+  shop.buyDay=5;assert.ok(shop.buyScreen().includes('id="next-buy-day" aria-label="Next shopping day" disabled'));
+  shop.buyDay=3;assert.ok(shop.buyScreen().includes('already includes a ₱1,000'));
+  console.log('PASS: shopping dates/navigation, native PHP/TWD prices, CRUD, persistence and day/trip expense integration');
   console.log('PASS: checklist starter items, add/edit/move/check/delete, reload persistence, empty list and header-only navigation');
   console.log('PASS: date selection, import counts, both budgets, maps choice, currency conversion, completion/undo, persistence, filters and summary');
 }

@@ -29,6 +29,8 @@ const starterChecklist = [
 let state = { theme: saved.theme === 'light' ? 'light' : 'dark', completed: saved.completed || {}, lunch: saved.lunch === 'backup' ? 'backup' : 'primary', departureBreakfast: ['homee','seven'].includes(saved.departureBreakfast) ? saved.departureBreakfast : 'either', checklist: Array.isArray(saved.checklist) ? saved.checklist.filter(i=>i && typeof i.id==='string' && typeof i.text==='string' && ['todo','bring'].includes(i.category)).map(i=>({...i,done:!!i.done})) : starterChecklist };
 let editingChecklist = null, deletingChecklist = null;
 let checklistSortables = [], suppressChecklistClickUntil = 0;
+state.buyItems=Array.isArray(saved.buyItems)?saved.buyItems.filter(item=>item && typeof item.id==='string' && typeof item.name==='string' && /^2026-11-(06|07|08|09|10|11)$/.test(item.date) && ['TWD','PHP'].includes(item.currency) && Number.isFinite(item.price) && item.price>=0).map(item=>({...item,bought:!!item.bought})):[];
+let buyDayIndex=0, editingBuy=null, deletingBuy=null;
 let data, photos = {}, dayIndex = 0, filter = 'all', openActivity = null, expandedExpenses = new Set(), downloading = false, installPrompt;
 const icons = {
   guide:'<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/>',
@@ -70,12 +72,15 @@ function cost(a) {
   if(a.costPHP) return [0,1].map(i=>(a.cost?.[i] || 0)+a.costPHP[i]/data.rate);
   return a.cost;
 }
-function total(day) { const amounts=(day.budgetItems || day.activities).map(cost).filter(Boolean); return amounts.length ? amounts.reduce((r,c)=>[r[0]+c[0],r[1]+c[1]],[0,0]) : null; }
+function buyCost(item) { const value=item.currency==='PHP'?item.price/data.rate:item.price; return [value,value]; }
+function buyItemPriceLabel(item) { return (item.currency==='PHP'?'₱':'NT$')+item.price.toLocaleString('en-PH',{maximumFractionDigits:2})+' · ≈ '+money(buyCost(item),item.currency==='PHP'?'TWD':'PHP'); }
+function expenseRows(day) { return [...(day.budgetItems || day.activities),...state.buyItems.filter(item=>item.date===day.date).map(item=>({id:'buy-'+item.id,title:'To Buy · '+item.name,cost:buyCost(item),isPurchase:true}))]; }
+function total(day) { const amounts=expenseRows(day).map(cost).filter(Boolean); return amounts.length ? amounts.reduce((r,c)=>[r[0]+c[0],r[1]+c[1]],[0,0]) : null; }
 function tripTotal() { return data.days.map(total).filter(Boolean).reduce((r,c)=>[r[0]+c[0],r[1]+c[1]],[0,0]); }
 function stats(range) { return `<div class="money-grid"><div><small>TWD · 2 PEOPLE</small><strong>${money(range)}</strong></div><div><small>PHP · 2 PEOPLE</small><strong>${money(range,'PHP')}</strong></div><div><small>PHP · PER PERSON</small><strong>${money(range,'PHP',true)}</strong></div></div>`; }
 function lunchSelector() { return `<label class="lunch-select">Lunch choice<select id="lunch"><option value="primary" ${state.lunch==='primary'?'selected':''}>Hang Zhou Xiao Long Bao</option><option value="backup" ${state.lunch==='backup'?'selected':''}>Chun Shui Tang · backup</option></select></label>`; }
 function departureBreakfastSelector() { return `<label class="lunch-select">Breakfast choice<select id="departure-breakfast"><option value="either" ${state.departureBreakfast==='either'?'selected':''}>Undecided · either option</option><option value="homee" ${state.departureBreakfast==='homee'?'selected':''}>hómee KITCHEN · NT$400–700 / 2</option><option value="seven" ${state.departureBreakfast==='seven'?'selected':''}>7-Eleven · NT$140–260 / 2</option></select></label>`; }
-function budgetNote(day) { return `<p class="fine-print">Planning rate: NT$1 ≈ ₱${data.rate}. ${day?.budgetNote || 'Hotel and prepaid eSIM excluded. Nov 9 includes its planned tour and ?1,000 shopping allocation; other optional shopping is excluded.'} ${!day || day.date==='2026-11-07'?'Nov 7 totals include EasyCard prepaid credit plus separately listed fares, so some transport amounts overlap.':''}</p>`; }
+function budgetNote(day) { return `<p class="fine-print">Planning rate: NT$1 ≈ ₱${data.rate}. To Buy items are added separately to the base itinerary estimates below. ${day?.budgetNote || 'Hotel and prepaid eSIM excluded. Nov 9 includes its planned tour and ₱1,000 shopping allocation; unlisted optional shopping is excluded.'} ${!day || day.date==='2026-11-07'?'Nov 7 totals include EasyCard prepaid credit plus separately listed fares, so some transport amounts overlap.':''}</p>`; }
 function renderBlocks(blocks=[]) {
   let output='',list=null;
   for(const b of blocks){
@@ -105,10 +110,10 @@ function daily() {
   return `<section class="page-intro"><span class="eyebrow">YOUR DAILY GUIDE</span><h1>${esc(d.title)}</h1><p>${esc(d.subtitle)}</p></section><div class="day-switch"><button class="icon-button" id="prev-day" aria-label="Previous day" ${dayIndex===0?'disabled':''}>${icon('left')}</button><div><strong>${dateLabel(d.date)}</strong><span>${weekday(d.date)} · ${d.label}</span></div><button class="icon-button" id="next-day" aria-label="Next day" ${dayIndex===data.days.length-1?'disabled':''}>${icon('right')}</button></div><div class="timeline-heading"><h2>The day's plan</h2><label class="filter-label"><span class="sr-only">Filter activities</span><select id="filter"><option value="all" ${filter==='all'?'selected':''}>All activities</option><option value="completed" ${filter==='completed'?'selected':''}>Completed</option><option value="unfinished" ${filter==='unfinished'?'selected':''}>Unfinished</option></select></label></div>${d.notice?`<aside class="note day-notice"><strong>Planning reminder</strong><p>${esc(d.notice)}</p></aside>`:''}<section class="timeline">${activities.map(activityCard).join('') || `<div class="empty">${icon(d.activities.length?'check':'summary')}<h3>${d.activities.length?'No activities in this filter':'Itinerary coming soon'}</h3><p>${d.activities.length?'Try another filter to see the rest of your day.':'We’ll add this day when its itinerary is ready.'}</p></div>`}</section>${dayExtras(d)}`;
 }
 function summary() {
-  return `<section class="hero"><img src="./assets/taipei.svg" alt="Illustration of Taipei's skyline and temple roofs"><div class="hero-copy"><span class="eyebrow">SIX DAYS. TWO TRAVELERS.</span><h1>A little Taiwan,<br>a lot of memories.</h1><span class="trip-pill">November 6–11, 2026 ${icon('plane')}</span></div></section><section class="overview"><div><span class="eyebrow">THE TRIP AT A GLANCE</span><h2>From takeoff to Taipei</h2><p>A quick look at where we’re going.</p></div><span class="badge">2 travelers</span></section><div class="summary-budget"><span class="eyebrow">KNOWN ESTIMATES · NOV 7–11</span>${stats(tripTotal())}<p class="fine-print">Partial gross planning total. Nov 6 costs, Nov 11 lunch/Grab and any baggage add-on costs are not included. Includes Nov 9’s planned tour and shopping allocation.</p><a href="#expenses" class="text-link">View expense breakdown ${icon('right')}</a></div><section class="summary-days">${data.days.map((d,index)=>`<article class="summary-day"><header><span class="day-number">${String(index).padStart(2,'0')}</span><div><span class="eyebrow">${weekday(d.date).toUpperCase()}</span><h2>${dateLabel(d.date)}</h2><p>${esc(d.subtitle)}</p></div><button class="icon-button" data-open-day="${index}" aria-label="View ${dateLabel(d.date)} daily guide">${icon('right')}</button></header>${d.activities.length?`<ul class="spot-list">${d.activities.filter(a=>a.summary).flatMap(a=>a.summaryStops?[a,...a.summaryStops]:[a]).map(a=>`<li><time>${esc(a.time)}</time><span>${esc(a.title)}</span><small>${cost(a)?money(cost(a)):'Cost pending'}</small></li>`).join('')}</ul>`:`<p class="pending">Itinerary pending</p>`}<div class="day-total"><span>Estimated day budget · 2 people</span><strong>${money(total(d))}</strong><small>${total(d)?money(total(d),'PHP'):'Budget pending'}</small></div></article>`).join('')}</section>`;
+  return `<section class="hero"><img src="./assets/taipei.svg" alt="Illustration of Taipei's skyline and temple roofs"><div class="hero-copy"><span class="eyebrow">SIX DAYS. TWO TRAVELERS.</span><h1>A little Taiwan,<br>a lot of memories.</h1><span class="trip-pill">November 6–11, 2026 ${icon('plane')}</span></div></section><section class="overview"><div><span class="eyebrow">THE TRIP AT A GLANCE</span><h2>From takeoff to Taipei</h2><p>A quick look at where we’re going.</p></div><span class="badge">2 travelers</span></section><div class="summary-budget"><span class="eyebrow">KNOWN TRIP ESTIMATES</span>${stats(tripTotal())}<p class="fine-print">Partial gross planning total. Unprovided itinerary costs for Nov 6, Nov 11 lunch/Grab and any baggage add-on fees are excluded. To Buy estimates are included. Includes Nov 9’s planned tour and shopping allocation.</p><a href="#expenses" class="text-link">View expense breakdown ${icon('right')}</a></div><section class="summary-days">${data.days.map((d,index)=>`<article class="summary-day"><header><span class="day-number">${String(index).padStart(2,'0')}</span><div><span class="eyebrow">${weekday(d.date).toUpperCase()}</span><h2>${dateLabel(d.date)}</h2><p>${esc(d.subtitle)}</p></div><button class="icon-button" data-open-day="${index}" aria-label="View ${dateLabel(d.date)} daily guide">${icon('right')}</button></header>${d.activities.length?`<ul class="spot-list">${d.activities.filter(a=>a.summary).flatMap(a=>a.summaryStops?[a,...a.summaryStops]:[a]).map(a=>`<li><time>${esc(a.time)}</time><span>${esc(a.title)}</span><small>${cost(a)?money(cost(a)):'Cost pending'}</small></li>`).join('')}</ul>`:`<p class="pending">Itinerary pending</p>`}<div class="day-total"><span>Estimated day budget · 2 people</span><strong>${money(total(d))}</strong><small>${total(d)?money(total(d),'PHP'):'Budget pending'}</small></div></article>`).join('')}</section>`;
 }
 function expenses() {
-  return `<section class="page-intro"><span class="eyebrow">A LITTLE PLANNING GOES A LONG WAY</span><h1>The trip budget</h1><p>Estimated expenses, together and per person.</p></section><section class="expense-overview"><span class="badge">Estimates only</span><h2>Whole-trip overview</h2><span class="eyebrow">KNOWN ESTIMATES · NOV 7–11</span>${stats(tripTotal())}<p class="partial-note">This is a partial gross planning total. Nov 6 costs, Nov 11 lunch/Grab and any baggage add-on costs are not included.</p>${budgetNote()}</section><div class="timeline-heading"><h2>Day-by-day breakdown</h2><span class="subtle">For 2 people</span></div><section class="expense-days">${data.days.map((d,i)=>`<details class="expense-card" data-expense="${i}" ${expandedExpenses.has(i)?'open':''}><summary><span><span class="eyebrow">${d.label.toUpperCase()} · ${weekday(d.date).toUpperCase()}</span><strong>${dateLabel(d.date)}</strong></span><span class="expense-total"><strong>${money(total(d))}</strong><small>${total(d)?money(total(d),'PHP'):'Budget pending'}</small></span><span class="chevron">${icon('right')}</span></summary><div class="expense-detail">${i===1?lunchSelector():i===5?departureBreakfastSelector():''}${total(d)?`<div class="table-scroll" tabindex="0" aria-label="Scrollable expense breakdown"><table><thead><tr><th>Item</th><th>TWD / 2</th><th>PHP / 2</th><th>PHP / person</th></tr></thead><tbody>${(d.budgetItems || d.activities).filter(a=>cost(a)&&cost(a)[1]>0).map(a=>`<tr><td>${a.id==='07-14'?(state.lunch==='primary'?'Lunch · Hang Zhou':'Lunch · Chun Shui Tang'):esc(a.title)}</td><td>${money(cost(a))}</td><td>${money(cost(a),'PHP')}</td><td>${money(cost(a),'PHP',true)}</td></tr>`).join('')}</tbody><tfoot><tr><th>Gross planning total</th><td>${money(total(d))}</td><td>${money(total(d),'PHP')}</td><td>${money(total(d),'PHP',true)}</td></tr></tfoot></table></div>${budgetNote(d)}`:'<p class="pending">No expense estimates supplied for this day yet. This does not mean the day is free.</p>'}</div></details>`).join('')}</section>`;
+  return `<section class="page-intro"><span class="eyebrow">A LITTLE PLANNING GOES A LONG WAY</span><h1>The trip budget</h1><p>Estimated expenses, together and per person.</p></section><section class="expense-overview"><span class="badge">Estimates only</span><h2>Whole-trip overview</h2><span class="eyebrow">KNOWN TRIP ESTIMATES</span>${stats(tripTotal())}<p class="partial-note">This is a partial gross planning total. Unprovided itinerary costs for Nov 6, Nov 11 lunch/Grab and any baggage add-on fees are excluded. To Buy estimates are included.</p>${budgetNote()}</section><div class="timeline-heading"><h2>Day-by-day breakdown</h2><span class="subtle">For 2 people</span></div><section class="expense-days">${data.days.map((d,i)=>`<details class="expense-card" data-expense="${i}" ${expandedExpenses.has(i)?'open':''}><summary><span><span class="eyebrow">${d.label.toUpperCase()} · ${weekday(d.date).toUpperCase()}</span><strong>${dateLabel(d.date)}</strong></span><span class="expense-total"><strong>${money(total(d))}</strong><small>${total(d)?money(total(d),'PHP'):'Budget pending'}</small></span><span class="chevron">${icon('right')}</span></summary><div class="expense-detail">${i===1?lunchSelector():i===5?departureBreakfastSelector():''}${total(d)?`<div class="table-scroll" tabindex="0" aria-label="Scrollable expense breakdown"><table><thead><tr><th>Item</th><th>TWD / 2</th><th>PHP / 2</th><th>PHP / person</th></tr></thead><tbody>${expenseRows(d).filter(a=>a.isPurchase || cost(a)&&cost(a)[1]>0).map(a=>`<tr><td>${a.id==='07-14'?(state.lunch==='primary'?'Lunch · Hang Zhou':'Lunch · Chun Shui Tang'):esc(a.title)}</td><td>${money(cost(a))}</td><td>${money(cost(a),'PHP')}</td><td>${money(cost(a),'PHP',true)}</td></tr>`).join('')}</tbody><tfoot><tr><th>Gross planning total</th><td>${money(total(d))}</td><td>${money(total(d),'PHP')}</td><td>${money(total(d),'PHP',true)}</td></tr></tfoot></table></div>${budgetNote(d)}`:'<p class="pending">No expense estimates supplied for this day yet. This does not mean the day is free.</p>'}</div></details>`).join('')}</section>`;
 }
 function checklistForm(item) {
   return `<form class="checklist-form" data-checklist-form="${item?esc(item.id):'new'}"><label>Item<input name="text" type="text" maxlength="180" value="${esc(item?.text || '')}" placeholder="e.g. Bring sunglasses" required></label><label>Section<select name="category"><option value="todo" ${item?.category!=='bring'?'selected':''}>To do</option><option value="bring" ${item?.category==='bring'?'selected':''}>To bring</option></select></label><div class="checklist-form-actions"><button type="submit" class="checklist-save">${item?'Save changes':'Add item'}</button>${item?'<button type="button" data-checklist-cancel>Cancel</button>':''}</div></form>`;
@@ -132,6 +137,51 @@ function saveChecklistOrder(category, ids) {
   state.checklist=state.checklist.map(item=>item.category===category?byId.get(ids[index++]):item);
   persist();return true;
 }
+function currentBuyDayIndex() {
+  const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
+  const part=t=>parts.find(p=>p.type===t).value,date=`${part('year')}-${part('month')}-${part('day')}`;
+  const index=data.days.findIndex(day=>day.date===date);
+  return index>=0?index:date<data.days[0].date?0:data.days.length-1;
+}
+function saveBuyItem(id,date,name,price,currency) {
+  name=name.trim();
+  if(!name || name.length>180 || !data.days.some(day=>day.date===date) || !['TWD','PHP'].includes(currency) || !Number.isFinite(price) || price<0 || price>1000000)return false;
+  price=Math.round(price*100)/100;
+  if(id==='new')state.buyItems.push({id:crypto.randomUUID(),date,name,price,currency,bought:false});
+  else {const item=state.buyItems.find(item=>item.id===id);if(!item)return false;Object.assign(item,{date,name,price,currency});}
+  editingBuy=null;deletingBuy=null;persist();return true;
+}
+function buyForm(item) {
+  const currency=item?.currency || 'TWD';
+  return `<form class="buy-form checklist-form" data-buy-form="${item?esc(item.id):'new'}" data-buy-date="${data.days[buyDayIndex].date}" data-currency="${currency}"><label>Item name<input name="name" type="text" maxlength="180" value="${esc(item?.name || '')}" placeholder="e.g. Shampoo" required></label><div class="buy-price-heading"><label for="buy-price-${item?esc(item.id):'new'}">Estimated unit price</label><div class="currency-toggle" role="group" aria-label="Price currency"><button type="button" data-buy-currency="TWD" aria-pressed="${currency==='TWD'}">TWD</button><button type="button" data-buy-currency="PHP" aria-pressed="${currency==='PHP'}">PHP</button></div></div><div class="buy-price-input"><span data-buy-prefix>${currency==='TWD'?'NT$':'₱'}</span><input id="buy-price-${item?esc(item.id):'new'}" name="price" type="number" inputmode="decimal" min="0" max="1000000" step="0.01" value="${item?item.price:''}" placeholder="0.00" required></div><p class="buy-conversion" data-buy-conversion aria-live="polite">${item?buyPricePreview(item.price,currency):'Enter a price to see the conversion.'}</p><div class="checklist-form-actions"><button type="submit" class="checklist-save">${item?'Save changes':'Add item'}</button>${item?'<button type="button" data-buy-cancel>Cancel</button>':''}</div></form>`;
+}
+function buyPricePreview(price,currency) {
+  const amount=buyCost({price,currency});
+  return currency==='PHP'?`≈ ${money(amount)} · NT$1 ≈ ₱${data.rate}`:`≈ ${money(amount,'PHP')} · NT$1 ≈ ₱${data.rate}`;
+}
+function refreshBuyPreview(form) {
+  const input=form.querySelector('[name="price"]'),price=Number(input.value),currency=form.dataset.currency;
+  form.querySelector('[data-buy-prefix]').textContent=currency==='PHP'?'₱':'NT$';
+  form.querySelectorAll('[data-buy-currency]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.buyCurrency===currency)));
+  form.querySelector('[data-buy-conversion]').textContent=input.value!=='' && Number.isFinite(price) && price>=0 && price<=1000000?buyPricePreview(price,currency):'Enter a price to see the conversion.';
+}
+function buyScreen() {
+  const day=data.days[buyDayIndex],items=state.buyItems.filter(item=>item.date===day.date);
+  const sum=items.reduce((amount,item)=>amount+buyCost(item)[0],0);
+  return `<section class="page-intro"><span class="eyebrow">LITTLE THINGS TO PICK UP</span><h1>To Buy</h1><p>Your shopping list for the day. Saved on this phone.</p></section><div class="day-switch"><button class="icon-button" id="prev-buy-day" aria-label="Previous shopping day" ${buyDayIndex===0?'disabled':''}>${icon('left')}</button><div><strong>${dateLabel(day.date)}</strong><span>${weekday(day.date)} · ${day.label}</span></div><button class="icon-button" id="next-buy-day" aria-label="Next shopping day" ${buyDayIndex===data.days.length-1?'disabled':''}>${icon('right')}</button></div><section class="summary-budget buy-overview"><span class="eyebrow">TO BUY ESTIMATE · ${dateLabel(day.date).toUpperCase()}</span>${stats([sum,sum])}<p class="fine-print">Added to this day’s and the trip’s estimated expenses. Bought items stay in the estimate. Add purchases not already covered by the itinerary.</p>${day.date==='2026-11-09'?'<p class="fine-print buy-allowance-note">Nov 9 already includes a ₱1,000 pasalubong allocation. Items here are additional to that allowance.</p>':''}<a href="#expenses" class="text-link">View expenses ${icon('right')}</a></section><section class="checklist-section"><h2>Shopping list</h2><ul class="checklist-items">${items.map(item=>`<li class="checklist-item ${item.bought?'checked':''}">${editingBuy===item.id?buyForm(item):`<div class="checklist-row"><label><input type="checkbox" data-buy-check="${esc(item.id)}" ${item.bought?'checked':''}><span>${esc(item.name)}<small class="buy-item-price">${buyItemPriceLabel(item)}</small></span></label><button class="checklist-edit" data-buy-edit="${esc(item.id)}" aria-label="Edit ${esc(item.name)}">Edit</button><button class="checklist-delete" data-buy-delete="${esc(item.id)}" aria-label="Delete ${esc(item.name)}">Delete</button></div>${deletingBuy===item.id?`<div class="delete-confirm"><span>Delete this item?</span><button data-buy-remove="${esc(item.id)}">Delete</button><button data-buy-cancel>Keep item</button></div>`:''}`}</li>`).join('') || '<li class="checklist-empty">Nothing to buy yet. Add your first item below.</li>'}</ul></section>${editingBuy?'':`<section class="checklist-section"><h2>Add an item</h2>${buyForm()}</section>`}`;
+}
+function handleBuyClick(e) {
+  const currency=e.target.closest('[data-buy-currency]');
+  if(currency){const form=currency.closest('[data-buy-form]');form.dataset.currency=currency.dataset.buyCurrency;refreshBuyPreview(form);return true;}
+  const edit=e.target.closest('[data-buy-edit]'),del=e.target.closest('[data-buy-delete]'),remove=e.target.closest('[data-buy-remove]');
+  if(edit){editingBuy=edit.dataset.buyEdit;deletingBuy=null;render();$('#main input[name="name"]').focus();return true;}
+  if(del){deletingBuy=del.dataset.buyDelete;editingBuy=null;render();return true;}
+  if(remove){state.buyItems=state.buyItems.filter(item=>item.id!==remove.dataset.buyRemove);deletingBuy=null;persist();render();toast('Item removed from shopping list and estimates');return true;}
+  if(e.target.closest('[data-buy-cancel]')){editingBuy=null;deletingBuy=null;render();return true;}
+  if(e.target.closest('#prev-buy-day')&&buyDayIndex>0){buyDayIndex--;editingBuy=null;deletingBuy=null;render();return true;}
+  if(e.target.closest('#next-buy-day')&&buyDayIndex<data.days.length-1){buyDayIndex++;editingBuy=null;deletingBuy=null;render();return true;}
+  return false;
+}
 function initChecklistSorting() {
   if(!window.Sortable)return;
   document.querySelectorAll('[data-checklist-category]').forEach(list=>{
@@ -154,15 +204,17 @@ function initChecklistSorting() {
     }));
   });
 }
-function currentView() { const v=location.hash.slice(1); return ['daily','summary','expenses','checklist'].includes(v)?v:'summary'; }
+function currentView() { const v=location.hash.slice(1); return ['daily','summary','expenses','checklist','buy'].includes(v)?v:'summary'; }
 function render() {
   checklistSortables.forEach(sortable=>sortable.destroy());checklistSortables=[];
   const v=currentView();
-  $('#main').innerHTML=v==='checklist'?checklist():v==='daily'?daily():v==='expenses'?expenses():summary();
+  $('#main').innerHTML=v==='buy'?buyScreen():v==='checklist'?checklist():v==='daily'?daily():v==='expenses'?expenses():summary();
   if(v==='checklist')$('#checklist-toggle').setAttribute('aria-current','page');
   else $('#checklist-toggle').removeAttribute?.('aria-current');
+  if(v==='buy')$('#buy-toggle').setAttribute('aria-current','page');
+  else $('#buy-toggle').removeAttribute?.('aria-current');
   $('.bottom-nav').innerHTML=[['daily','guide','Daily Guide'],['summary','summary','Trip Summary'],['expenses','expenses','Expenses']].map(([id,ic,title])=>`<a href="#${id}" ${v===id?'aria-current="page"':''}>${icon(ic)}<span>${title}</span></a>`).join('');
-  document.title=`${v==='checklist'?'Pre-flight Checklist':v==='daily'?dateLabel(data.days[dayIndex].date):v==='summary'?'Trip Summary':'Expenses'} · Taiwan Together`;
+  document.title=`${v==='buy'?'To Buy':v==='checklist'?'Pre-flight Checklist':v==='daily'?dateLabel(data.days[dayIndex].date):v==='summary'?'Trip Summary':'Expenses'} · Taiwan Together`;
   if(v==='checklist')initChecklistSorting();
   document.querySelectorAll('[data-activity]').forEach(el=>el.addEventListener('toggle',()=>{
     if(el.open){ openActivity=el.dataset.activity; document.querySelectorAll('[data-activity]').forEach(other=>{if(other!==el)other.open=false;}); }
@@ -195,6 +247,7 @@ $('#main').addEventListener('keydown',e=>{
   }
 });
 $('#main').addEventListener('click',e=>{
+  if(handleBuyClick(e))return;
   const edit=e.target.closest('[data-checklist-edit]'), del=e.target.closest('[data-checklist-delete]'), remove=e.target.closest('[data-checklist-remove]');
   if(edit){editingChecklist=edit.dataset.checklistEdit;deletingChecklist=null;render();$('#main input[name="text"]').focus();return;}
   if(del){deletingChecklist=del.dataset.checklistDelete;editingChecklist=null;render();return;}
@@ -207,25 +260,33 @@ $('#main').addEventListener('click',e=>{
   if(e.target.closest('#next-day')&&dayIndex<data.days.length-1){dayIndex++;openActivity=null;render();}
 });
 $('#main').addEventListener('change',e=>{
+  if(e.target.dataset?.buyCheck){const item=state.buyItems.find(item=>item.id===e.target.dataset.buyCheck);if(item){item.bought=e.target.checked;persist();e.target.closest('.checklist-item').classList.toggle('checked',item.bought);}return;}
   if(e.target.dataset?.checklistCheck){const item=state.checklist.find(i=>i.id===e.target.dataset.checklistCheck);if(item){item.done=e.target.checked;persist();e.target.closest('.checklist-item').classList.toggle('checked',item.done);}return;}
   if(e.target.id==='filter'){filter=e.target.value;openActivity=null;render();}if(e.target.id==='lunch'){state.lunch=e.target.value;persist();render();}
   if(e.target.id==='departure-breakfast'){state.departureBreakfast=['homee','seven'].includes(e.target.value)?e.target.value:'either';persist();render();}
 });
 $('#main').addEventListener('submit',e=>{
+  const buyForm=e.target.closest('[data-buy-form]');
+  if(buyForm){
+    e.preventDefault();const fields=new FormData(buyForm),price=String(fields.get('price') ?? '').trim();
+    if(!price || !saveBuyItem(buyForm.dataset.buyForm,buyForm.dataset.buyDate,String(fields.get('name') || ''),Number(price),buyForm.dataset.currency)){toast('Enter an item and a valid non-negative price.');return;}
+    render();toast('Shopping list and expense estimates updated');return;
+  }
   const form=e.target.closest('[data-checklist-form]');if(!form)return;e.preventDefault();
   const fields=new FormData(form);
   if(!saveChecklistItem(form.dataset.checklistForm,String(fields.get('text') || ''),String(fields.get('category') || ''))){toast('Enter an item with 1–180 characters.');return;}
   render();toast('Checklist saved');
 });
-window.addEventListener('hashchange',()=>{openActivity=null;render();window.scrollTo({top:0,behavior:'instant'});});
+$('#main').addEventListener('input',e=>{const form=e.target.closest('[data-buy-form]');if(form && e.target.name==='price')refreshBuyPreview(form);});
+window.addEventListener('hashchange',()=>{openActivity=null;editingBuy=null;deletingBuy=null;if(currentView()==='buy')buyDayIndex=currentBuyDayIndex();render();window.scrollTo({top:0,behavior:'instant'});});
 applyTheme();
 try {
   const response=await fetch('./data/itinerary.json'); if(!response.ok)throw new Error('Itinerary unavailable'); data=await response.json();
   try { const photoResponse=await fetch('./data/photos.json'); if(photoResponse.ok) photos=await photoResponse.json(); } catch {}
   const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
   const value=t=>parts.find(p=>p.type===t).value; const today=`${value('year')}-${value('month')}-${value('day')}`;
-  const todayIndex=data.days.findIndex(d=>d.date===today); dayIndex=todayIndex>=0?todayIndex:0;
-  if(!['daily','summary','expenses','checklist'].includes(location.hash.slice(1)))history.replaceState(null,'',todayIndex>=0?'#daily':'#summary');
+  const todayIndex=data.days.findIndex(d=>d.date===today); dayIndex=todayIndex>=0?todayIndex:0; buyDayIndex=currentBuyDayIndex();
+  if(!['daily','summary','expenses','checklist','buy'].includes(location.hash.slice(1)))history.replaceState(null,'',todayIndex>=0?'#daily':'#summary');
   render();
 } catch { $('#main').innerHTML='<div class="empty"><h1>Couldn’t load the trip</h1><p>Connect to the local server and refresh to try again.</p></div>'; }
 let registration;
@@ -233,7 +294,7 @@ if('serviceWorker' in navigator) {
   try {
     registration=await navigator.serviceWorker.register('./sw.js');
     await navigator.serviceWorker.ready;
-    const ready=await caches.has('taiwan-offline-v7');
+    const ready=await caches.has('taiwan-offline-v8');
     if(ready){$('#offline-status').textContent='Trip downloaded · available offline';$('#download').textContent='Refresh offline download';}
   } catch { $('#offline-status').textContent='Offline support unavailable in this browser'; }
 }

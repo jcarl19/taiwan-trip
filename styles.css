@@ -49,9 +49,26 @@
 
 
 .checklist-drag-hint{font-size:11px;color:var(--muted);margin-top:-15px;margin-bottom:22px}
-.checklist-item:not(.checklist-editing){cursor:grab;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.checklist-item[data-checklist-id]:not(.checklist-editing){cursor:grab;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
 .checklist-item:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
 .checklist-drag-chosen{background:var(--raised);border-radius:8px}
 .checklist-drag-placeholder{opacity:.3}
 .checklist-drag-fallback{background:var(--surface);border:1px solid var(--accent);border-radius:10px;box-shadow:var(--shadow);padding:12px;cursor:grabbing;z-index:30!important;list-style:none}
+
+
+#buy-toggle[aria-current]{color:var(--accent);border-color:var(--accent)}
+.buy-overview{margin-top:22px}
+.buy-price-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--muted);font-size:11px}
+.currency-toggle{display:flex;gap:3px;padding:3px;background:var(--raised);border:1px solid var(--border);border-radius:10px}
+.currency-toggle button{min-width:52px;min-height:38px;border:0;border-radius:7px;background:transparent;color:var(--muted);font-size:11px;font-weight:600}
+.currency-toggle button[aria-pressed=true]{background:var(--accent);color:var(--accent-dark)}
+.buy-price-input{display:flex;align-items:center;background:var(--bg);border:1px solid var(--border);border-radius:9px;padding:0 12px;gap:10px}
+.buy-price-input:focus-within{outline:2px solid var(--accent);outline-offset:2px}
+.buy-price-input>span{font-size:14px;color:var(--accent)}
+.buy-price-input input{width:100%;min-width:0;border:0;outline:none;background:transparent;color:var(--text);font:inherit;font-size:16px;padding:12px 0;min-height:46px}
+.buy-conversion{font-size:11px;color:var(--muted);margin:0}
+.buy-item-price{display:block;font-size:10px;color:var(--warm);margin-top:4px;text-decoration:none}
+.buy-allowance-note{color:var(--warm)}
+@media(max-width:540px){.brand{font-size:16px;gap:8px}.brand-mark{font-size:22px;padding:4px 8px}.brand small{font-size:8px;letter-spacing:1.3px}.header-actions{gap:5px}}
+@media(max-width:380px){.brand-mark{display:none}.brand{font-size:15px;gap:0}.brand small{font-size:7px;letter-spacing:1px}.header-actions{gap:4px}}
 
